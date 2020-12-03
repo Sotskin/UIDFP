@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #E5E5E5;
+  }
+  
+  h1 {
+      font-size: 44px;
+      font-family: Arial, sans-serif;
+      font-weight: normal;
+      color: #454545;
+      margin-top: 25px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    color: #454545;
+    text-align: center;
+  }
+
+  hr {
+    color: #B5B5B5;
+    border-top: 2px solid;
+  }
+  .main-dashboard {
+    width: 100%;
+    vertical-align: center;
+    min-height: 83vh;
+    background: #F9F9F9;
+    margin-top: 2.5px;
+  }
+
+  .header {
+    background: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    height: 133px;
+    width: 100%
+  }
+  
+  .title {
+    float: left;
+    font-weight: bold;
+    color: #91A6C5;
+    font-size: 38px;
+    line-height: 133px;
+    padding-left: 100px;
+    padding-right: 70px;
+  }
+  
+  .head-tab {
+    float: left;
+    color: #91A6C5;
+    font-size: 18px;
+    padding-right: 66px;
+    line-height: 133px;
+    font-weight: lighter;
+    position: relative;
+  }
+  
+  .right-dashboard {
+    float: right;
+    padding-top: 40px;
+    padding-right: 35px;
+  }
+  
+  .log-out {
+    text-align: right;
+    color: #91A6C5;
+  }
+  
+  .active-tab {
+    border-bottom: 5px solid #91A6C5;
+  }
+
+  .left-panel {
+    width: 245px;
+    height: 83vh;
+    display: block;
+    margin-left: 98px;
+    padding-top: 1px;
+    /* background: lightblue; */
+  }
+  /* .right-panel {
+    display: block;
+    width: 245px;
+    height: 83vh;
+    display: block;
+    background: red;
+  } */
+  
+  .calendar {
+    position: absolute;
+    width: 240px;
+    height: 273px;
+    left: 105px;
+    top: 225px;
+    border-style: solid;
+    border-radius: 5px;
+    color: #B5B5B5;
+    background-color: #FFFFFF;
+  }
