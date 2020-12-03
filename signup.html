@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>sign up</title>
+    <link rel="stylesheet" href="signup-style.css">
+  </head>
+  <body>
+    <div class="sign-up">
+      <div class="window-title">
+        <span class="inactive-title">Sign in</span>
+        <span class="top-divider"></span>
+        <span class="active-title">Sign up</span>
+      </div>
+      <form>
+        <div class="betweeninput">
+          <label for="name">Name     </label>
+          <input type="text" id="name" name="name">
+        </div>
+        <div class="betweeninput">
+          <label for="email">Email   </label>
+          <input type="text" id="email" name="email">
+        </div>
+        <div class="betweeninput">
+          <label for="password">Password </label>
+          <input type="text" id="password" name="password">
+        </div>
+        <div class="betweeninput">
+          <label for="re-password">Re-Password    </label>
+          <input type="text" id="re-password" name="re-password">
+        </div>
+      </form>
+      <form class="check">
+          <div class="checkboxes">
+            <input type="checkbox" name="integrate-gcal" id="integrate-gcal">
+            <label for="integrate-gcal">Integrate with Google Calendar</label>
+            <br>
+            <input type="checkbox" name="integrate-canvas" id="integrate-canvas">
+            <label for="integrate-canvas">Integrate with Canvas</label>
+          </div>
+      </form>
+      <div id=submit>
+        <button type= "button" class="submit-sign-up" >Submit</button>
+      </div>
+    </div>
+  </body>
+</html>
