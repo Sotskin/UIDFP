@@ -252,22 +252,71 @@ get the numbers to center with the words */
 }
 
 .circle {
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 23px;
     margin-left: 144px;
     margin-top: -25px;
-    padding-bottom: -4px;
-    /* -webkit-border-radius: 25px;
-    -moz-border-radius: 25px; */
     border-radius: 50%;
     background: #E8CDDA;
+    border: 1px solid #C292A9;
 }
 .circle1 {
-    width: 180px;
+    width: 175px;
     height: 25px;
-    margin-left: 30px;
+    margin-left: 33px;
     margin-top: -116px;
     padding-bottom: -4px;
     border-radius: 15px;
-    background: #B6D1FA;
+    background: #bdd6fc;
+}
+
+label {
+    font-size: 15px;
+    color: #333333;
+    margin-left: 15px;
+    margin-top: -10px;
+    padding-left: 25px;
+    width: 100%;
+    display: block;
+    float: left;
+    line-height: 0px;
+    height: 30px;
+  }
+  
+  .check {
+    margin-top: 320px;
+    padding-left: 4px;
+    font-family: Arial;
+  }
+  
+  input[type=checkbox] {
+    transform: scale(1.5);
+  }
+  
+  .check input {
+    width: 10px;
+    text-align: left;
+    margin-right: 194px;
+    margin-top: 1px;
+  }
+
+  .button1 {
+      width: 274px;
+      height: 44px;
+      background-color: #FFFFFF;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #9D916D;
+      border: 2px solid #FBE5A2;
+      border-radius: 4px;
+  }
+
+  .button2 {
+    width: 274px;
+    height: 44px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    color: #8498B5;
+    border: 2px solid #B6D1FA;
+    border-radius: 4px;
 }
