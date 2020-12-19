@@ -2,7 +2,16 @@ body {
     font-family: Arial, sans-serif;
     background: lightgray;
   }
+
+  #wrapper {
+      margin-left:auto;
+      margin-right:auto;
+  }
   
+  #dashboard {
+      margin-left: auto;
+      margin-right:auto;
+  }
   h1 {
       font-size: 44px;
       font-family: Arial, sans-serif;
@@ -81,13 +90,15 @@ body {
     padding-top: 1px;
     /* background: lightblue; */
   }
-  /* .right-panel {
+  .right-panel {
+    width: 825px;
+    height: 593px;
+    margin-left: 435px;
     display: block;
-    width: 245px;
-    height: 83vh;
-    display: block;
-    background: red;
-  } */
+    /* background: red; */
+    margin-top:-643px;
+    position: fixed;
+  }
   
   .calendar {
     position: absolute;
@@ -258,7 +269,8 @@ get the numbers to center with the words */
     margin-top: -25px;
     border-radius: 50%;
     background: #E8CDDA;
-    border: 1px solid #C292A9;
+    /* border: 1px solid #C292A9; */
+    box-shadow: 1.5px 1.5px;
 }
 .circle1 {
     width: 175px;
@@ -309,6 +321,7 @@ label {
       color: #9D916D;
       border: 2px solid #FBE5A2;
       border-radius: 4px;
+      box-shadow: 2px 2px #CFCECE;
   }
 
   .button2 {
@@ -319,4 +332,105 @@ label {
     color: #8498B5;
     border: 2px solid #B6D1FA;
     border-radius: 4px;
+    box-shadow: 2px 2px #CFCECE;
+
 }
+
+.day-box1 {
+  width: 168px;
+  height: 537px;
+  border: 2px solid #454545;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+
+}
+
+.day-box2 {
+  width: 168px;
+  height: 537px;
+  border: 2px solid #454545;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  margin-left: 190px;
+  margin-top: -540px;
+}
+
+.day-box3 {
+  width: 168px;
+  height: 537px;
+  border: 2px solid #454545;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  margin-left: 380px;
+  margin-top: -540px;
+}
+
+.day-box4 {
+  width: 168px;
+  height: 537px;
+  border: 2px solid #454545;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  margin-left: 570px;
+  margin-top: -540px;
+}
+
+.day-box5 {
+  width: 168px;
+  height: 537px;
+  border: 2px solid #454545;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  margin-left: 760px;
+  margin-top: -540px;
+}
+
+.day-wrapper{
+padding-left: 35px;
+width: 930px;
+}
+
+.day-label1 {
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  color: #454545;
+  margin-right: 80px;
+}
+
+.day-label2 {
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  color: #454545;
+  margin-right: 80px;
+}
+
+.day-label3 {
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  color: #454545;
+  margin-right: 80px;
+  margin-left: 10px;
+}
+
+.day-label4 {
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  color: #454545;
+  margin-right: 95px;
+}
+
+.day-label5 {
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  color: #454545;
+  margin-right: 80px;
+}
+
+
+
+
