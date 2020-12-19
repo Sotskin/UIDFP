@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="calendar-style2.css">
+        <title>Student Calendar </title>
+    </head>
+    <body>
+        <div id= "wrapper">
+            <div id= "dashboard">
+                <div class="header">
+                    <div class="title">
+                        MeetMe
+                    </div>
+                    <div>
+                        <a href="#" class="head-tab">Your Dashboard</a>
+                    </div>
+                    <div>
+                        <a href="#" class="head-tab">Calendar</a>
+                    </div>
+                    <div>
+                        <a href="#" class="head-tab">Notifications</a>
+                    </div>
+                    <div>
+                        <a href="#" class="head-tab">Help</a>
+                    </div>
+                    <div class= current-tab></div>
+                    <div class= notification></div>
+                    <div class="right-dashboard">
+                        <div class="welcome-back">
+                        Welcome back, Prof Smith!
+                        </div>
+                        <div class="log-out">
+                            <a href="#" class="log-out">log out</a>
+                        </div>
+                    </div>
+                </div>
+                <div class= main-dashboard>
+                    <div class="left-panel">
+                        <h1>Calendar</h1>
+                        <div class= calendar>
+                            <span class= arrow></span>
+                            <h2 class= month>November 2020</h2>
+                            <span class= arrow></span>
+                            <hr>
+                            <div class = date_container>
+                                <ul class="weekdays">
+                                    <li>S</li>
+                                    <li>M</li>
+                                    <li>T</li>
+                                    <li>W</li>
+                                    <li>T</li>
+                                    <li>F</li>
+                                    <li>S</li>
+                                </ul>
+                                <ul class="days">
+                                    <li><span class="day_1">1</span></li>
+                                    <li><span class="day_2">2</span></li>
+                                    <li><span class="day_3">3</span></li>
+                                    <li><span class="day_4">4</span></li>
+                                    <li><span class="day_5">5</span></li>
+                                    <li><span class="day_6">6</span></li>
+                                    <li><span class="day_7">7</span></li>
+                                    <li><span class="day_8">8</span></li>
+                                    <li><span class="day_9">9</span></li>
+                                    <li><span class="day_10">10</span></li>
+                                    <li><span class="day_11">11</span></li>
+                                    <li><span class="day_12">12</span></li>
+                                    <li><span class="day_13">13</span></li>
+                                    <li><span class="day_14">14</span></li>
+                                    <li><span class="day_15">15</span></li>
+                                    <li><span class="day_16">16</span></li>
+                                    <li><span class="day_17">17</span></li>
+                                    <li><span class="day_18">18</span></li>
+                                    <li><span class="day_19">19</span></li>
+                                    <li><span class="day_20">20</span></li>
+                                    <li><span class="day_21">21</span></li>
+                                    <li><span class="day_22">22</span></li>
+                                    <li><span class="day_23">23</span></li>
+                                    <li><span class="day_24">24</span></li>                            
+                                    <li><span class="day_25">25</span></li>
+                                    <li><span class="day_26">26</span></li>
+                                    <li><span class="day_27">27</span></li> 
+                                    <li><span class="day_28">28</span></li>
+                                    <li><span class="day_29">29</span></li> 
+                                    <li><span class="day_30">30</span></li> 
+                                    <li><span class="day_1i">1</span></li>
+                                    <li><span class="day_2i">2</span></li>
+                                    <li><span class="day_3i">3</span></li>
+                                    <li><span class="day_4i">4</span></li>
+                                    <li><span class="day_5i">5</span></li>                                          
+                                </ul>
+                                <div class = circle1></div>
+                                <div class = circle></div>
+                            </div>
+                        </div>
+                        <form class="check">
+                            <div class="checkboxes">
+                            <input type="checkbox" name="class2" id="class2">
+                            <label for="class2">4710 User Interface Design</label>
+                            <br>
+                            <br>
+                            <input type="checkbox" name="attending" id="attending">
+                            <label for="attending">Show Attending Only</label>
+                            </div>
+                        </form>
+                        <div id= button>
+                            <button  class= button1>Manage my courses</button>
+                        </div>
+                        <div id= button>
+                            <button class= button2>Edit My Availability</button>
+                        </div>
+                    </div>
+                    <div class="right-panel">
+                        <div class= day-wrapper>
+                            <span class=day-label1>Mon 11/16</span>
+                            <span class=day-label2>Tue 11/17</span>
+                            <span class=day-label3>Wed 11/18</span>
+                            <span class=day-label4>Thu 11/19</span>
+                            <span class=day-label5>Fri 11/20</span>
+                        </div>
+                        <div class = hour_container>
+                            <ul class="hours">
+                                <li>8:00 am</li>
+                                <li>9:00 am</li>
+                                <li>10:00 am</li>
+                                <li>11:00 am</li>
+                                <li>12:00 pm</li>
+                                <li>1:00 pm</li>
+                                <li>2:00 pm</li>
+                                <li>3:00 pm</li>
+                                <li>4:00 pm</li>
+                                <li>5:00 pm</li>
+                                <li>6:00 pm</li>
+                                <li>7:00 pm</li>
+                                <li>8:00 pm</li>
+                                <li>9:00 pm</li>
+                                <li>10:00 pm</li>
+                            </ul>
+                        </div>
+                        <div class= day-box-container>
+                            <div class= day-box1>
+                                <button class=pink1>
+                                    <div class=box-title>4710 OH</div>
+                                    <div class=box-hour2>2 PM - 3 PM</div>
+                                </button>
+                                <button class=green1>
+                                    <div class=box-title>4710 TA OH</div>
+                                    <div class=box-hour>4 PM - 5 PM</div>
+                                </button>
+                            </div>
+                            <div class= day-box2>
+                                <button class=blue1>
+                                    <div class=box-title>4710 Appt w/ Ca..</div>
+                                    <div class=box-hour>1 PM - 2 PM</div>
+                                </button>
+                                <button class=yellow1>
+                                    <div class=box-title>Research meeting</div>
+                                    <div class=box-hour>7 PM - 8 PM</div>
+                                </button>
+                            </div>
+                            <div class= day-box3>
+                                <button class=yellow2>
+                                    <div class=box-title>Department meet..</div>
+                                    <div class=box-hour>9 AM - 11 AM</div>
+                                </button>
+                                <button class=blue2>
+                                    <div class=box-title>4710 Appt w/ Me..</div>
+                                    <div class=box-hour>4 PM - 5 PM</div>
+                                </button>
+                            </div>
+                            <div class= day-box4>
+                                <button class=blue3>
+                                    <div class=box-title>4710 Appt w/ Sa..</div>
+                                    <div class=box-hour>10 AM - 11 AM</div>
+                                </button>
+                                <button class=yellow3>
+                                    <div class=box-title>4710 UI Design</div>
+                                    <div class=box-hour>2 PM - 5 PM</div>
+                                </button>
+                                <button class=pink2>
+                                    <div class=box-title>4710 OH</div>
+                                    <div class=box-hour2>6 PM - 7 PM</div>
+                                </button>
+                            </div>
+                            <div class= day-box5>
+                                <button class=green2>
+                                    <div class=box-title>4710 TA OH</div>
+                                    <div class=box-hour>1 PM - 2 PM</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="legend-panel">
+                        <div class="legend1">
+                            <div class=legend-text>
+                                On your calendar
+                            </div>
+                        </div>
+                        <div class="legend2">
+                            <div class=legend-text>
+                                Appointments
+                            </div>
+                        </div>
+                        <div class="legend3">
+                            <div class=legend-text>
+                                Your OH
+                            </div>
+                        </div>
+                        <div class="legend4">
+                            <div class=legend-text>
+                                All OH
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
