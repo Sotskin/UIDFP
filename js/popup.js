@@ -63,7 +63,7 @@ $(function() {
 
     // Student hours
     $("#dialog-student-hour").dialog({
-        autoOpen: true,
+        autoOpen: false,
         dialogClass: 'dialog student-hour',
         width: "555px",
         padding: "20px",
@@ -71,6 +71,54 @@ $(function() {
         open: function (e, ui) {
             $('.ui-widget-overlay').bind('click', function () {
                 $("#dialog-student-hour").dialog('close');
+            });
+        }
+    });
+
+    // Appointment
+    $("#dialog-make-appointment").dialog({
+        autoOpen: false,
+        dialogClass: 'dialog appointments',
+        width: "555px",
+        padding: "20px",
+        modal: true,
+        open: function (e, ui) {
+            $('.ui-widget-overlay').bind('click', function () {
+                $("#dialog-make-appointment").dialog('close');
+                $("#app-date").val(undefined)
+                $("#app-avail-time").css("display", "none")
+            });
+        }
+    });
+    $("#app-date").on("change", (e) => {
+        e.preventDefault();
+        $("#app-avail-time").css("display", "block")
+        reCenterDialog();
+    })
+
+    $("#dialog-edit-appointment").dialog({
+        autoOpen: false,
+        dialogClass: 'dialog appointments',
+        width: "555px",
+        padding: "20px",
+        modal: true,
+        open: function (e, ui) {
+            $('.ui-widget-overlay').bind('click', function () {
+                $("#dialog-edit-appointment").dialog('close');
+            });
+        }
+    });
+
+    // Office hour
+    $("#dialog-edit-oh").dialog({
+        autoOpen: false,
+        dialogClass: 'dialog office-hour',
+        width: "555px",
+        padding: "20px",
+        modal: true,
+        open: function (e, ui) {
+            $('.ui-widget-overlay').bind('click', function () {
+                $("#dialog-edit-oh").dialog('close');
             });
         }
     });
@@ -85,5 +133,16 @@ $(function() {
         e.preventDefault()
         $("#dialog-student-hour").dialog("open");
     });
-
+    $("#button-make-appointment").on("click", function(e) {
+        e.preventDefault()
+        $("#dialog-make-appointment").dialog("open");
+    });
+    $("#button-edit-appointment").on("click", function(e) {
+        e.preventDefault()
+        $("#dialog-edit-appointment").dialog("open");
+    });
+    $("#button-edit-oh").on("click", function(e) {
+        e.preventDefault()
+        $("#dialog-edit-oh").dialog("open");
+    });
 });
