@@ -68,17 +68,26 @@ body {
     position: relative;
     text-decoration: none;
   }
+
+  .current-tab {
+    background-color: #91A6C5;
+    width: 80px;
+    height: 5px;
+    margin-left: 503px;
+    margin-top: 129px;
+  }
   
   .right-dashboard {
     float: right;
-    padding-top: 40px;
     padding-right: 35px;
+    margin-top: -10px;
   }
   
   
   .log-out {
     text-align: right;
     color: #91A6C5;
+    margin-top: 3px;
     text-decoration: none;
   }
   
@@ -86,11 +95,22 @@ body {
     border-bottom: 5px solid #91A6C5;
   }
 
+  .notification {
+    width: 5px;
+    height: 5px;
+    margin-left: 144px;
+    margin-top: -25px;
+    border-radius: 50%;
+    background: #91A6C5;
+    margin-left: 744px;
+    margin-top: -80px;
+  }
+
   .left-panel {
     width: 245px;
     height: 83vh;
     display: block;
-    margin-left: 98px;
+    margin-left: 100px;
     padding-top: 1px;
     /* background: lightblue; */
   }
@@ -326,7 +346,7 @@ label {
       border: 2px solid #FBE5A2;
       border-radius: 4px;
       box-shadow: 2px 2px #CFCECE;
-      margin-top: -3px;
+      margin-top: 2px;
   }
 
   .button2 {
@@ -403,6 +423,7 @@ label {
 padding-left: 35px;
 padding-bottom: 4px;
 width: 930px;
+height: 30px;
 margin-top: -17px;
 }
 
@@ -412,6 +433,7 @@ margin-top: -17px;
   font-weight: normal;
   color: #454545;
   margin-right: 80px;
+  background-color: #F9F9F9;
 }
 
 .day-label2 {
@@ -654,6 +676,7 @@ margin-top: -17px;
   width: 205px;
   padding-top:1px;
   padding-left: 12px;
+  margin-top: 6px;
   border:none;
 }
 
