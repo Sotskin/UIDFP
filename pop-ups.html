@@ -2,35 +2,35 @@
 <html>
 <head>
     <link rel="stylesheet" href="dialog_style.css">
-<!--    <script src="js/jquery-3.5.1.js"></script>-->
-<!--    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/ui-darkness/jquery-ui.css" rel="stylesheet">-->
-<!--    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+    <!--    <script src="js/jquery-3.5.1.js"></script>-->
+    <!--    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/ui-darkness/jquery-ui.css" rel="stylesheet">-->
+    <!--    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
     <script src="js/popup.js"></script>
 </head>
 
 <body>
-        <button id="button-manage-course" class="button2">Manage my courses</button>
+<button id="button-manage-course" class="button2">Manage my courses</button>
 <!--    <div id="dynamic-button-container"></div>-->
 
-    <div id="dialog-manage-course">
-        <div class="dialog-title">Manage My Courses</div>
-        <div class="dialog-row">
-            <label for="course-select">Course:</label>
-            <select id="course-select" class="">
-                <option selected="selected">COMS4170 User Interface Design</option>
-                <option>COMS4111 Introduction To Databases</option>
-            </select>
-            <button>+</button>
-        </div>
-        <div class="dialog-row">You are a student of this class</div>
-        <div id="ia-container" class="dialog-row"></div>
-        <div class="dialog-button-container">
-            <button id="button-make-appointment" class="button2">Make an Appointment</button>
-            <button id="remove-a-course" class="button2">Remove this Course</button>
-        </div>
+<div id="dialog-manage-course">
+    <div class="dialog-title">Manage My Courses</div>
+    <div class="dialog-row">
+        <label for="course-select">Course:</label>
+        <select id="course-select" class="">
+            <option selected="selected">COMS4170 User Interface Design</option>
+            <option>COMS4111 Introduction To Databases</option>
+        </select>
+        <button id="button-add-class">+</button>
     </div>
+    <div class="dialog-row">You are a student of this class</div>
+    <div id="ia-container" class="dialog-row"></div>
+    <div class="dialog-button-container">
+        <button id="button-make-appointment" class="dialog-button positive">Make an Appointment</button>
+        <button id="button-remove-course" class="dialog-button negative">Remove this Course</button>
+    </div>
+</div>
 </body>
 </html>
 

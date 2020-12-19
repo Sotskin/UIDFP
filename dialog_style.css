@@ -1,11 +1,19 @@
-.button2 {
+.dialog-button {
     width: 240px;
     height: 44px;
     background-color: #FFFFFF;
     font-size: 18px;
-    color: #8498B5;
-    border: 2px solid #B6D1FA;
     border-radius: 4px;
+}
+
+.dialog-button.positive {
+    color: #4497E3;
+    border: 2px solid #4497E3;
+}
+
+.dialog-button.negative {
+    color: #C23131;
+    border: 2px solid #C23131;
 }
 
 .dialog-title {
@@ -41,8 +49,15 @@
 
 .dialog {
     background-color: #E2FBFE;
-    border-style: solid;
-    border-color: #929B8C;
+    border: 1px solid #929B8C;
+}
+
+.ui-widget-overlay {
+    position: fixed;
+    background-color: #454545;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
 }
 
 #course-select {
@@ -53,17 +68,29 @@
     margin-left: 100px;
 }
 
+#button-add-class {
+    height: 30px;
+    width: 30px;
+    font-size: 40px;
+    border: 1px solid;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #ia-container {
     width: auto;
     min-height: 100px;
-    background-color: #ffffff;
-    border-style: solid;
+    background-color: #FFFFFF;
+    border: 1px solid;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
 }
 
-* {
+body {
     font-size: 20px;
     font-family: "arial";
     border-color: #929B8C;
