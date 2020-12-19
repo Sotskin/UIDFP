@@ -93,7 +93,7 @@ body {
   .right-panel {
     width: 825px;
     height: 593px;
-    margin-left: 435px;
+    margin-left: 465px;
     display: block;
     /* background: red; */
     margin-top:-643px;
@@ -352,7 +352,7 @@ label {
   border-radius: 5px;
   background-color: #FFFFFF;
   margin-left: 190px;
-  margin-top: -540px;
+  margin-top: -541px;
 }
 
 .day-box3 {
@@ -362,7 +362,7 @@ label {
   border-radius: 5px;
   background-color: #FFFFFF;
   margin-left: 380px;
-  margin-top: -540px;
+  margin-top: -541px;
 }
 
 .day-box4 {
@@ -372,7 +372,7 @@ label {
   border-radius: 5px;
   background-color: #FFFFFF;
   margin-left: 570px;
-  margin-top: -540px;
+  margin-top: -541px;
 }
 
 .day-box5 {
@@ -382,11 +382,12 @@ label {
   border-radius: 5px;
   background-color: #FFFFFF;
   margin-left: 760px;
-  margin-top: -540px;
+  margin-top: -541px;
 }
 
 .day-wrapper{
 padding-left: 35px;
+padding-bottom: 4px;
 width: 930px;
 }
 
@@ -431,6 +432,49 @@ width: 930px;
   margin-right: 80px;
 }
 
+.hour_container {
+  margin-left: -110px;
+  margin-top: -10px;
+  float:left;
+}
 
+.hours {
+  list-style-type: none;
+  color: #777777;
+  font-family: arial;
+  font-size: 14px;
+  letter-spacing: 3.5%;
+}
 
+.hours li {
+  margin-bottom: 21px;
+}
+
+.blue1 {
+  background-color: #B6D1FA;
+  border-radius: 7px;
+  height: 50px;
+  width: 146px;
+  margin-left: 11px;
+  padding-top:1px;
+  margin-top: 78px;
+}
+
+.box-title {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #333333;
+  margin-left: 12px;
+  margin-top: 7px;
+}
+
+.box-hour {
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  color: #333333;
+  margin-left: 12px;
+  margin-top: 3px;
+}
 
