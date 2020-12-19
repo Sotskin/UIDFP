@@ -8,8 +8,12 @@
 </head>
 
 <body>
+<div class="testing-env">
 <button id="button-manage-course" class="button">Manage my courses</button>
+<button id="button-student-hour" class="button">Create Student Hour</button>
+</div>
 
+<!-- Dialog for Common Features-->
 <div id="dialog-manage-course-student">
     <div class="dialog-title">Manage My Courses</div>
     <div class="dialog-row">
@@ -233,6 +237,49 @@
                 <button class="dialog-button positive" type="submit">Confirm Enrollment</button>
             </div>
         </form>
+    </div>
+</div>
+
+<!-- Dialog for Student hour-->
+<div id="dialog-student-hour">
+    <div class="dialog-title">Create a Student Hour</div>
+    <div class="dialog-row">
+        <label for="course-select-sh">Course:</label>
+        <select id="course-select-sh" class="course-select">
+            <option selected="selected">COMS4170 User Interface Design</option>
+            <option>COMS4111 Introduction To Databases</option>
+        </select>
+    </div>
+    <div class="dialog-row">
+        <div>Duration</div>
+        <div class="button-group long">
+            <input type="radio" name="sh-duration" id="sh-duration-60" value="60">
+            <label for="sh-duration-60">60min</label>
+            <input type="radio" name="sh-duration" id="sh-duration-90" value="90">
+            <label for="sh-duration-90">90min</label>
+        </div>
+    </div>
+    <label class="dialog-row" for="sh-suggested-topic">Suggest a topic to discuss</label>
+    <div class="dialog-row">
+        <textarea id="sh-suggested-topic" placeholder="Topic to discuss with fellow students..."></textarea>
+    </div>
+    <div class="dialog-row sub-checkboxes low">
+        <div>
+            <input type="checkbox" id="sh-vote-topic">
+            <label for="sh-vote-topic">Vote for topic</label>
+        </div>
+        <div>
+            <input type="checkbox" id="sh-recurring">
+            <label for="sh-recurring">Recurring</label>
+        </div>
+    </div>
+    <div class="dialog-row">
+        <label for="sh-start-time">Start time:</label>
+        <input type="datetime-local" id="sh-start-time">
+    </div>
+    <div class="dialog-button-container">
+        <div class="dialog-footnote">A notificatin will be sent to students of COMS4170 about the new student hour</div>
+        <button class="dialog-button positive">Create a Student Hour</button>
     </div>
 </div>
 
