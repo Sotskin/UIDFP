@@ -2,27 +2,24 @@
 <html>
 <head>
     <link rel="stylesheet" href="dialog_style.css">
-    <!--    <script src="js/jquery-3.5.1.js"></script>-->
-    <!--    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/ui-darkness/jquery-ui.css" rel="stylesheet">-->
-    <!--    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
     <script src="js/popup.js"></script>
 </head>
 
 <body>
-<button id="button-manage-course" class="button2">Manage my courses</button>
-<!--    <div id="dynamic-button-container"></div>-->
+<button id="button-manage-course" class="button">Manage my courses</button>
 
-<div id="dialog-manage-course">
+<div id="dialog-manage-course-student">
     <div class="dialog-title">Manage My Courses</div>
     <div class="dialog-row">
-        <label for="course-select">Course:</label>
-        <select id="course-select" class="">
+        <label for="course-select-student">Course:</label>
+        <select id="course-select-student" class="course-select">
             <option selected="selected">COMS4170 User Interface Design</option>
             <option>COMS4111 Introduction To Databases</option>
         </select>
-        <button id="button-add-class">+</button>
+        <button class="button-add-class"
+                onclick="onClickAddCourse('dialog-manage-course-student')">+</button>
     </div>
     <div class="dialog-row">You are a student of this class</div>
     <div class="ia-container">
@@ -102,10 +99,143 @@
         </div>
     </div>
     <div class="dialog-button-container">
-        <button id="button-make-appointment" class="dialog-button positive">Make an Appointment</button>
-        <button id="button-remove-course" class="dialog-button negative">Remove this Course</button>
+        <button class="dialog-button positive">Make an Appointment</button>
+        <button class="dialog-button negative">Remove this Course</button>
     </div>
 </div>
+
+<div id="dialog-manage-course-professor">
+    <div class="dialog-title">Manage My Courses</div>
+    <div class="dialog-row">
+        <label for="course-select-professor">Course:</label>
+        <select id="course-select-professor" class="course-select">
+            <option selected="selected">COMS4170 User Interface Design</option>
+            <option>COMS4111 Introduction To Databases</option>
+        </select>
+        <button class="button-add-class"
+                onclick="onClickAddCourse('dialog-manage-course-professor')">+</button>
+    </div>
+    <div class="ia-container-user">
+        <div class="ia-detail-container">
+            <div class="ia-photo"></div>
+            <div>
+                <div class="ia-name">Prof. Brian A. Smith</div>
+                <div>
+                    <div class="ia-detail-row">
+                        <span>Office hour:</span>
+                        <span>XXXXXX</span>
+                    </div>
+                    <div class="ia-detail-row">
+                        <span>Zoom link:</span>
+                        <span>XXXXXX</span>
+                    </div>
+                    <div class="ia-detail-row">
+                        <span>Email:</span>
+                        <span>XXXXXX</span>
+                    </div>
+                    <div class="ia-detail-row">
+                        <span>Website:</span>
+                        <span>XXXXXX</span>
+                    </div>
+                </div>
+                <a class="ia-detail-edit" href="placeholder.html">edit</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="dialog-row">You are an instructor of this class</div>
+    <div class="ia-container">
+<!--        <div>Professor:</div>-->
+        <div>IAs:</div>
+        <div class="ia-detail-container">
+            <div class="ia-photo"></div>
+            <div>
+                <div class="ia-name">Vishnu Nair (Head TA)</div>
+                <div>
+                    <div class="ia-detail-row">
+                        <span>Office hour:</span>
+                        <span>XXXXXX</span>
+                    </div>
+                    <div class="ia-detail-row">
+                        <span>Zoom link:</span>
+                        <span>XXXXXX</span>
+                    </div>
+                    <div class="ia-detail-row">
+                        <span>Email:</span>
+                        <span>XXXXXX</span>
+                    </div>
+                    <div class="ia-detail-row">
+                        <span>Website:</span>
+                        <span>XXXXXX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ia-detail-container">
+            <div class="ia-photo"></div>
+            <div>
+                <div class="ia-name">Lea Broudo</div>
+                <div>
+                    <div class="ia-detail-row">
+                        <span>Office hour:</span>
+                        <span>XXXXXX</span>
+                    </div>
+                    <div class="ia-detail-row">
+                        <span>Zoom link:</span>
+                        <span>XXXXXX</span>
+                    </div>
+                    <div class="ia-detail-row">
+                        <span>Email:</span>
+                        <span>XXXXXX</span>
+                    </div>
+                    <div class="ia-detail-row">
+                        <span>Website:</span>
+                        <span>XXXXXX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-button-container">
+        <button class="dialog-button negative">Remove this Course</button>
+    </div>
+</div>
+
+<div id="dialog-enroll-course">
+    <div class="dialog-title">Enroll in a Course</div>
+    <div class="dialog-row">
+        <span>Course:</span>
+        <form id="enroll-search-form"> <!-- action="/not_implemented" -->
+            <input id="enroll-search-input" name="search_query" type="text">
+            <input id="enroll-search-submit" type="submit" value="Search">
+        </form>
+    </div>
+    <div id="enroll-search-result">
+        <hr class="solid-divider">
+        <div class="dialog-title">COMS4170 User Interface Design</div>
+        <form id="enroll-choice-form" class="dialog-row">
+            <div>Enroll as:</div>
+            <div id="enroll-radio-list">
+                <div>
+                    <div>
+                        <input type="radio" name="enroll-choice-item" id="enroll-choice-student" value="student">
+                        <label for="enroll-choice-student">Student</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="enroll-choice-item" id="enroll-choice-instructor" value="instructor">
+                        <label for="enroll-choice-instructor">Instructor</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="enroll-choice-item" id="enroll-choice-professor" value="professor">
+                        <label for="enroll-choice-professor">Professor</label>
+                    </div>
+                </div>
+                <button class="dialog-button positive" type="submit">Confirm Enrollment</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>
 

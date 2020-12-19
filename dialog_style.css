@@ -1,20 +1,31 @@
-.dialog-button {
-    width: 240px;
-    height: 44px;
-    background-color: #FFFFFF;
-    font-size: 18px;
-    border-radius: 4px;
+body {
+    font-size: 20px;
+    font-family: "arial";
+    border-color: #929B8C;
 }
 
-.dialog-button.positive {
-    color: #4497E3;
-    border: 2px solid #4497E3;
+.ui-widget-overlay {
+    position: fixed;
+    background-color: #454545;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
 }
 
-.dialog-button.negative {
-    color: #C23131;
-    border: 2px solid #C23131;
+.solid-divider {
+    margin-top: 30px;
+    border-top: 3px solid #bbb;
+    margin-bottom: 0;
 }
+
+.dialog {
+    background-color: #E2FBFE;
+    border: 1px solid #929B8C;
+    padding-bottom: 20px;
+}
+
+/* Disable jquery dialog header since it is hard to work with*/
+.dialog .ui-dialog-titlebar {display:none}
 
 .dialog-title {
     font-size: 30px;
@@ -32,7 +43,9 @@
 }
 
 .dialog-button-container {
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
@@ -44,20 +57,22 @@
     margin-top: 10px;
 }
 
-/* Disable jquery dialog header since it is hard to work with*/
-.dialog .ui-dialog-titlebar {display:none}
-
-.dialog {
-    background-color: #E2FBFE;
-    border: 1px solid #929B8C;
+.dialog-button {
+    width: 240px;
+    height: 44px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    border-radius: 4px;
 }
 
-.ui-widget-overlay {
-    position: fixed;
-    background-color: #454545;
-    opacity: 0.3;
-    top: 0;
-    left: 0;
+.dialog-button.positive {
+    color: #4497E3;
+    border: 2px solid #4497E3;
+}
+
+.dialog-button.negative {
+    color: #C23131;
+    border: 2px solid #C23131;
 }
 
 .ia-detail-row {
@@ -79,6 +94,7 @@
     text-align: right;
     min-width: 200px;
 }
+
 .ia-detail-container {
     display: flex;
     justify-content: space-between;
@@ -86,6 +102,13 @@
     padding-top: 20px;
     padding-left: 30px;
     padding-bottom: 20px;
+}
+
+.ia-detail-edit {
+    font-size: 12px;
+    text-align: right;
+    margin-top: 5px;
+    display: block;
 }
 
 .ia-container {
@@ -98,10 +121,22 @@
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
-    padding: 10px 20px 10px 10px;
+    padding: 10px 30px 10px 10px;
 }
 
-#course-select {
+.ia-container-user {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-left: 10px;
+}
+
+.ia-container-user .ia-detail-container {
+    padding-bottom: 0;
+}
+
+.course-select {
     max-width: 270px;
     height: 30px;
     font-size: 18px;
@@ -109,21 +144,58 @@
     margin-left: 100px;
 }
 
-#button-add-class {
+.button-add-class {
     height: 30px;
     width: 30px;
-    font-size: 40px;
+    font-size: 24px;
     border: 1px solid;
     padding: 0;
     margin: 0;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
+
+#enroll-search-form {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    width: 350px;
+    height: 30px;
+}
+
+#enroll-search-input {
+    flex-grow: 2;
+    font-size: 18px;
+}
+
+#enroll-search-submit {
+    font-size: 18px;
+    width: 90px;
+    background-color: #FFFFFF;
+    border: 1px solid #5f5f5f;
+}
+
+#enroll-search-result {
+    display: none;
+}
+
+#enroll-choice-form {
+    align-items: flex-start;
+}
+
+#enroll-radio-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#enroll-radio-list div {
+    padding-bottom: 10px;
+}
+
+#enroll-radio-list input {
+    height: 18px;
+    width: 18px;
 }
 
 
-body {
-    font-size: 20px;
-    font-family: "arial";
-    border-color: #929B8C;
-}
