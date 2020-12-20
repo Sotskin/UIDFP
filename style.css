@@ -5,11 +5,13 @@ body {
 
 .header {
   background: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
   height: 133px;
+  width: 100%;
+  overflow: hidden;
 }
 .main-dashboard {
-
+  margin-top: 2.5px;
   height: 891px;
   vertical-align: center;
   overflow: hidden;
@@ -32,7 +34,7 @@ body {
   color: #91A6C5;
   font-size: 18px;
   padding-right: 30px;
-  line-height: 133px;
+  line-height: 130px;
   font-weight: lighter;
 }
 
@@ -48,8 +50,9 @@ body {
 }
 
 .active-tab {
-  border-bottom: 5px solid #91A6C5;
+  border-bottom: 15px inset #91A6C5;
 }
+
 .left-panel {
   width: 318px;
   height: 891px;
