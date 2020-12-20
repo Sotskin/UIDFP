@@ -20,7 +20,7 @@ h1 {
   margin-top: 25px;
 }
 
-h2 {
+.month {
   font-size: 20px;
   font-family: Arial, sans-serif;
   font-weight: normal;
@@ -325,7 +325,7 @@ get the numbers to center with the words */
   font-family: Arial;
 }
 
-input[type=checkbox] {
+.checkboxes input[type=checkbox] {
   transform: scale(1.5);
 }
 
@@ -729,4 +729,11 @@ input[type=checkbox] {
   margin-left: 719px;
   margin-top: -36px;
   border:none;
+}
+
+#oh-detail-sample {
+  cursor: pointer;
+}
+#app-detail-sample {
+  cursor: pointer;
 }

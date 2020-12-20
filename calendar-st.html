@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/dialog_style.css">
+  <link rel="stylesheet" href="css/dialog_style_read_events.css">
   <link rel="stylesheet" href="css/calendar-style-st.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="js/popup.js"></script>
+  <script src="js/calendar-st.js"></script>
   <title>My Calendar </title>
 </head>
 <body>
@@ -155,14 +157,14 @@
         <div class= day-box-container>
           <div class= day-box1>
             <button class=blue1>
-              <div class=box-title>4710 Prof Smith</div>
+              <div class=box-title>1004 Prof Cannon</div>
               <div class=box-hour>10 AM - 11 AM</div>
             </button>
             <button class=pink1>
               <div class=box-title>4771 Eva's OH</div>
               <div class=box-hour>2 PM - 3 PM</div>
             </button>
-            <button class=green1>
+            <button id="oh-detail-sample" class=green1>
               <div class=box-title>4771 TA OH</div>
               <div class=box-hour>4 PM - 5 PM</div>
             </button>
@@ -186,8 +188,8 @@
               <div class=box-title>1004 TA OH</div>
               <div class=box-hour>2 PM - 3 PM</div>
             </button>
-            <button class=blue2>
-              <div class=box-title>1004 Prof Cannon</div>
+            <button id="app-detail-sample" class=blue2>
+              <div class=box-title>4710 Prof Smith</div>
               <div class=box-hour>4 PM - 5 PM</div>
             </button>
           </div>
@@ -328,7 +330,7 @@
     </div>
   </div>
   <div class="dialog-button-container">
-    <button class="dialog-button positive">Make an Appointment</button>
+    <button id="button-manage-make-appointment" class="dialog-button positive">Make an Appointment</button>
     <button class="dialog-button negative">Remove this Course</button>
   </div>
 </div>
@@ -364,65 +366,6 @@
         <button class="dialog-button positive" type="submit">Confirm Enrollment</button>
       </div>
     </form>
-  </div>
-</div>
-<div id="dialog-make-appointment">
-  <div class="dialog-title">Make an Appointment</div>
-  <div class="dialog-row">
-    <label for="course-select-app">Course:</label>
-    <select id="course-select-app" class="course-select">
-      <option selected="selected">COMS4170 User Interface Design</option>
-      <option>COMS4111 Introduction To Databases</option>
-    </select>
-  </div>
-  <div class="dialog-row">
-    <label for="instructor-select-app">Instructor:</label>
-    <select id="instructor-select-app" class="course-select">
-      <option selected="selected">Prof. Brian A. Smith</option>
-      <option>Vishnu Nair</option>
-      <option>Lea Broudo</option>
-    </select>
-  </div>
-  <div class="dialog-row">
-    <div>Duration</div>
-    <div class="button-group long">
-      <input type="radio" name="sh-duration" id="app-duration-60" value="60">
-      <label for="app-duration-60">60min</label>
-      <input type="radio" name="sh-duration" id="app-duration-90" value="90">
-      <label for="app-duration-90">90min</label>
-    </div>
-  </div>
-  <label class="dialog-row" for="app-suggested-topic">Suggest a topic to discuss</label>
-  <div class="dialog-row">
-    <textarea id="app-suggested-topic" placeholder="Topic to discuss for the appointment..."></textarea>
-  </div>
-  <div class="dialog-row">
-    <label for="app-date">Start time:</label>
-    <input type="date" id="app-date" class="time-input">
-  </div>
-  <div id="app-avail-time">
-    <div class="dialog-row">Available spots:</div>
-    <div class="dialog-row">
-      <div class="button-group normal">
-        <input type="radio" name="app-time" id="app-time-1" value="1">
-        <label for="app-time-1">11:30</label>
-        <input type="radio" name="app-time" id="app-time-2" value="2">
-        <label for="app-time-2">13:00</label>
-        <input type="radio" name="app-time" id="app-time-3" value="3">
-        <label for="app-time-3">13:30</label>
-        <input type="radio" name="app-time" id="app-time-4" value="4">
-        <label for="app-time-4">14:00</label>
-        <input type="radio" name="app-time" id="app-time-5" value="5">
-        <label for="app-time-5">15:00</label>
-        <input type="radio" name="app-time" id="app-time-6" value="6">
-        <label for="app-time-6">16:00</label>
-        <input type="radio" name="app-time" id="app-time-7" value="7">
-        <label for="app-time-7">16:30</label>
-      </div>
-    </div>
-  </div>
-  <div class="dialog-button-container">
-    <button class="dialog-button positive">Confirm Appointment</button>
   </div>
 </div>
 <div id="dialog-student-hour">
@@ -463,7 +406,161 @@
   </div>
   <div class="dialog-button-container">
     <div class="dialog-footnote">A notification will be sent to students of COMS4170 about the new student hour</div>
-    <button class="dialog-button positive">Create a Student Hour</button>
+    <button class="dialog-button positive"
+            onclick="onClickDefault('dialog-student-hour')">Create a Student Hour</button>
+  </div>
+</div>
+<div id="dialog-oh-st">
+  <div class="read-event">
+    <h2>Machine Learning | OH with TA</h2>
+    <div class="info">
+      <p>Monday 11/16 from 4pm-5pm</p>
+    </div>
+    <div>
+      <span class="red">Group session</span>
+      <span class="link">Join Zoom here</span>
+    </div>
+    <div class="info">
+      <p>Topics your classmates want to discuss</p>
+    </div>
+    <div class="selection">
+      <input type="checkbox" name="Limits" value="Limits">
+      <label for="Limits">Limits</label> <br>
+      <div class="box1">
+      </div>
+      <div class="number_limit">
+        6
+      </div>
+      <input type="checkbox" name="Chain Rule" value="Chain Rule">
+      <label for="Chain Rule">Chain Rule</label> <br>
+      <div class="box2">
+      </div>
+      <div class="number_chain">
+        1
+      </div>
+      <input type="checkbox" name="advice" value="advice">
+      <label for="advice">Career Advice</label> <br>
+      <div class="box3">
+      </div>
+      <div class="number_advice">
+        1
+      </div>
+    </div>
+    <div>
+      <span class="blue">Create another topic</span>
+      <span class="attending">Students attending: 8</span>
+    </div>
+    <p>About Professor Woit</p>
+    <div class="professor">
+      <p class="photo">Photo </p>
+    </div>
+    <div class="list">
+      <ul>
+        <li>Enjoys skiing</li>
+        <li>Has a kitten named Tango</li>
+        <li>Interested in Quantum</li>
+      </ul>
+    </div>
+    <div class="dialog-button-container">
+      <div id="note-oh-st" class="dialog-footnote">You have indicated to attend this OH</div>
+      <button id="button-oh-st-add" class="dialog-button positive">Add to Calendar</button>
+      <button id="button-oh-st-remove" class="dialog-button negative">Remove from Calendar</button>
+    </div>
+  </div>
+</div>
+
+<div id="dialog-app-st">
+  <div class="read-event">
+    <h2>Appointment with Prof Smith</h2>
+    <p>Wednesday 11/18 from 4pm-5pm</p>
+    <div class="session">
+      <span class="red">Individual Session</span>
+      <span class="link">Join Zoom here</span>
+    </div>
+    <div class="info">
+      <p>Suggested Topic &#128161;</p>
+    </div>
+    <div class="topics">
+      <p class="homework">Homework 5, Problem 3</p>
+      <p  class="homework">Midterm Exam</p>
+    </div>
+
+    <p>About Professor Smith</p>
+    <div class="professor">
+      <p class="photo">Photo </p>
+    </div>
+    <div class="list">
+      <ul>
+        <li>Enjoys skiing</li>
+        <li>Has a kitten named Tango</li>
+        <li>Interested in Quantum</li>
+      </ul>
+    </div>
+    <div class="dialog-button-container">
+      <button id="button-app-st-edit" class="dialog-button positive">Edit Appointment</button>
+      <button id="button-app-st-remove" class="dialog-button negative"
+              onclick="onClickDefault('dialog-app-st')">Cancel Appointment</button>
+    </div>
+  </div>
+</div>
+<div id="dialog-make-appointment">
+  <div class="dialog-title">Make an Appointment</div>
+  <div class="dialog-row">
+    <label for="course-select-app">Course:</label>
+    <select id="course-select-app" class="course-select">
+      <option selected="selected">COMS4170 User Interface Design</option>
+      <option>COMS4111 Introduction To Databases</option>
+    </select>
+  </div>
+  <div class="dialog-row">
+    <label for="instructor-select-app">Instructor:</label>
+    <select id="instructor-select-app" class="course-select">
+      <option selected="selected">Prof. Brian A. Smith</option>
+      <option>Vishnu Nair</option>
+      <option>Lea Broudo</option>
+    </select>
+  </div>
+  <div class="dialog-row">
+    <div>Duration</div>
+    <div class="button-group long">
+      <input type="radio" name="sh-duration" id="app-duration-60" value="60">
+      <label for="app-duration-60">60min</label>
+      <input type="radio" name="sh-duration" id="app-duration-90" value="90">
+      <label for="app-duration-90">90min</label>
+    </div>
+  </div>
+  <label class="dialog-row" for="app-suggested-topic">Suggest a topic to discuss</label>
+  <div class="dialog-row">
+    <textarea id="app-suggested-topic" placeholder="Topic to discuss for the appointment..."></textarea>
+  </div>
+  <div class="dialog-row">
+    <label for="sh-start-time">Start time:</label>
+    <input type="date" id="app-date" class="time-input">
+  </div>
+  <div id="app-avail-time">
+    <div class="dialog-row">Available spots:</div>
+    <div class="dialog-row">
+      <div class="button-group normal">
+        <input type="radio" name="app-time" id="app-time-1" value="1">
+        <label for="app-time-1">11:30</label>
+        <input type="radio" name="app-time" id="app-time-2" value="2">
+        <label for="app-time-2">13:00</label>
+        <input type="radio" name="app-time" id="app-time-3" value="3">
+        <label for="app-time-3">13:30</label>
+        <input type="radio" name="app-time" id="app-time-4" value="4">
+        <label for="app-time-4">14:00</label>
+        <input type="radio" name="app-time" id="app-time-5" value="5">
+        <label for="app-time-5">15:00</label>
+        <input type="radio" name="app-time" id="app-time-6" value="6">
+        <label for="app-time-6">16:00</label>
+        <input type="radio" name="app-time" id="app-time-7" value="7">
+        <label for="app-time-7">16:30</label>
+      </div>
+    </div>
+  </div>
+  <div class="dialog-button-container">
+    <button class="dialog-button positive"
+            onclick="onClickDefault('dialog-make-appointment')">Confirm Appointment</button>
   </div>
 </div>
 

@@ -20,7 +20,7 @@ h1 {
   margin-top: 25px;
 }
 
-h2 {
+.month {
   font-size: 20px;
   font-family: Arial, sans-serif;
   font-weight: normal;
@@ -704,4 +704,11 @@ input[type=checkbox] {
   margin-left: 719px;
   margin-top: -36px;
   border:none;
+}
+
+#oh-detail-sample-ins {
+  cursor: pointer;
+}
+#app-detail-sample-ins {
+  cursor: pointer;
 }

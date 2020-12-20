@@ -1,3 +1,16 @@
+/* Enable these styles for popup.html (working environment)
+/* body {*/
+/*    font-size: 20px;*/
+/*    font-family: "arial";*/
+/*    border-color: #929B8C;*/
+/*}*/
+
+/*.testing-env {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+
 .ui-widget-overlay {
     position: fixed;
     background-color: #454545;
@@ -9,10 +22,6 @@
     z-index: 1000;
 }
 
-/*.ui-front {*/
-/*    z-index: 1000000;*/
-/*}*/
-
 .solid-divider {
     margin-top: 30px;
     border-top: 3px solid #bbb;
@@ -23,6 +32,7 @@
     border: 1px solid #929B8C;
     padding-bottom: 20px;
     z-index: 1001;
+    position: fixed;
 }
 
 .dialog.manage-courses {

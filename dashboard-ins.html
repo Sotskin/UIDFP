@@ -68,7 +68,7 @@
       <button class=button2>Edit my availability</button>
     </div>
     <div class=buttons>
-      <button class=button3>Manage my Office Hours</button>
+      <button id="button-edit-oh" class=button3>Manage my Office Hours</button>
     </div>
   </div>
   <div class="right-panel">
@@ -125,6 +125,7 @@
     </div>
   </div>
 </div>
+
 <div id="dialog-manage-course-professor">
   <div class="dialog-title">Manage My Courses</div>
   <div class="dialog-row">
@@ -255,5 +256,52 @@
     </form>
   </div>
 </div>
+<div id="dialog-edit-oh">
+  <div class="dialog-title">Edit Office Hour</div>
+  <div class="dialog-row">
+    <div>Course:</div>
+    <div>COMS 4170 User Interface</div>
+  </div>
+  <div class="dialog-row">
+    <label for="oh-edit-date">Start time:</label>
+    <input type="datetime-local" id="oh-edit-date" class="time-input">
+  </div>
+  <div class="dialog-row">
+    <label for="oh-edit-duration">Duration (min):</label>
+    <input type="number" id="oh-edit-duration" class="normal-input" placeholder="OH duration">
+  </div>
+  <div class="dialog-row">
+    <label for="oh-edit-link">Zoom Link:</label>
+    <input type="url" id="oh-edit-link" class="normal-input" placeholder="Input Zoom link here">
+  </div>
+
+  <div id="oh-radio-list" class="dialog-row">
+    <div>
+      <input type="radio" name="enroll-choice-item" id="oh-topic-vote" value="vote">
+      <label for="oh-topic-vote">Allow students to vote OH topic</label>
+    </div>
+    <div>
+      <input type="radio" name="enroll-choice-item" id="oh-topic-fixed" value="fixed">
+      <label for="oh-topic-fixed">Set Fixed Topic: </label>
+    </div>
+    <div>
+      <input type="radio" name="enroll-choice-item" id="oh-topic-none" value="none">
+      <label for="oh-topic-none">Do not set any topic</label>
+    </div>
+  </div>
+
+  <div class="dialog-row checkbox">
+    <input type="checkbox" id="oh-edit-notify">
+    <label for="oh-edit-notify">Notify students about the change</label>
+  </div>
+  <div class="dialog-row checkbox">
+    <input type="checkbox" id="oh-edit-apply-all">
+    <label for="oh-edit-apply-all">Apply to all future repeating OH</label>
+  </div>
+  <div class="dialog-button-container">
+    <button id="button-edit-oh-confirm" class="dialog-button positive">Confirm Changes</button>
+  </div>
+</div>
+
 </body>
 </html>

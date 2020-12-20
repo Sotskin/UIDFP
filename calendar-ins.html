@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/dialog_style.css">
+  <link rel="stylesheet" href="css/dialog_style_read_events.css">
   <link rel="stylesheet" href="css/calendar-style-ins.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="js/popup.js"></script>
+  <script src="js/calendar-ins.js"></script>
   <title>My Calendar </title>
 </head>
 <body>
@@ -168,8 +170,8 @@
               <div class=box-title>Department meet..</div>
               <div class=box-hour>9 AM - 11 AM</div>
             </button>
-            <button class=blue2>
-              <div class=box-title>4710 Appt w/ Me..</div>
+            <button id= "app-detail-sample-ins" class=blue2>
+              <div class=box-title>4710 Appt w/ Ev..</div>
               <div class=box-hour>4 PM - 5 PM</div>
             </button>
           </div>
@@ -182,7 +184,7 @@
               <div class=box-title>4710 UI Design</div>
               <div class=box-hour>2 PM - 5 PM</div>
             </button>
-            <button class=pink2>
+            <button id="oh-detail-sample-ins" class=pink2>
               <div class=box-title>4710 OH</div>
               <div class=box-hour2>6 PM - 7 PM</div>
             </button>
@@ -349,6 +351,154 @@
         <button class="dialog-button positive" type="submit">Confirm Enrollment</button>
       </div>
     </form>
+  </div>
+</div>
+<div id="dialog-edit-oh">
+  <div class="dialog-title">Edit Office Hour</div>
+  <div class="dialog-row">
+    <div>Course:</div>
+    <div>COMS 4170 User Interface</div>
+  </div>
+  <div class="dialog-row">
+    <label for="oh-edit-date">Start time:</label>
+    <input type="datetime-local" id="oh-edit-date" class="time-input">
+  </div>
+  <div class="dialog-row">
+    <label for="oh-edit-duration">Duration (min):</label>
+    <input type="number" id="oh-edit-duration" class="normal-input" placeholder="OH duration">
+  </div>
+  <div class="dialog-row">
+    <label for="oh-edit-link">Zoom Link:</label>
+    <input type="url" id="oh-edit-link" class="normal-input" placeholder="Input Zoom link here">
+  </div>
+
+  <div id="oh-radio-list" class="dialog-row">
+    <div>
+      <input type="radio" name="enroll-choice-item" id="oh-topic-vote" value="vote">
+      <label for="oh-topic-vote">Allow students to vote OH topic</label>
+    </div>
+    <div>
+      <input type="radio" name="enroll-choice-item" id="oh-topic-fixed" value="fixed">
+      <label for="oh-topic-fixed">Set Fixed Topic: </label>
+    </div>
+    <div>
+      <input type="radio" name="enroll-choice-item" id="oh-topic-none" value="none">
+      <label for="oh-topic-none">Do not set any topic</label>
+    </div>
+  </div>
+
+  <div class="dialog-row checkbox">
+    <input type="checkbox" id="oh-edit-notify">
+    <label for="oh-edit-notify">Notify students about the change</label>
+  </div>
+  <div class="dialog-row checkbox">
+    <input type="checkbox" id="oh-edit-apply-all">
+    <label for="oh-edit-apply-all">Apply to all future repeating OH</label>
+  </div>
+  <div class="dialog-button-container">
+    <button id="button-edit-oh-confirm" class="dialog-button positive">Confirm Changes</button>
+  </div>
+</div>
+<div id="dialog-oh-ins">
+  <div class="read-event">
+    <h2>User Interface OH</h2>
+    <div class="info">
+      <p>Thursday 11/19 from 6pm-7pm</p>
+    </div>
+    <div>
+      <span class="red">Group session</span>
+      <span class="link">Join Zoom here</span>
+    </div>
+    <div class="info">
+      <p>Topics voted by students</p>
+    </div>
+    <div class="selection">
+      <input type="checkbox" name="Limits" value="Limits">
+      <label for="Limits">Javascript</label> <br>
+      <div class="box1">
+      </div>
+      <div class="number_limit">
+        6
+      </div>
+      <input type="checkbox" name="Chain Rule" value="Chain Rule">
+      <label for="Chain Rule">Storyboarding</label> <br>
+      <div class="box2">
+      </div>
+      <div class="number_chain">
+        1
+      </div>
+      <input type="checkbox" name="advice" value="advice">
+      <label for="advice">Figma</label> <br>
+      <div class="box3">
+      </div>
+      <div class="number_advice">
+        1
+      </div>
+    </div>
+    <div>
+      <span class="blue">Create another topic</span>
+      <span class="attending">Students attending: 8</span>
+    </div>
+    <div class="dialog-button-container">
+      <button id="button-oh-ins-edit" class="dialog-button positive">Edit this OH Event</button>
+      <button id="button-oh-ins-remove" class="dialog-button negative"
+              onclick="onClickDefault('dialog-oh-ins')">Cancel this OH Event</button>
+    </div>
+  </div>
+</div>
+
+
+<div id="dialog-app-ins">
+  <div class="read-event">
+    <h2>Appointment with Eva</h2>
+    <p>Wednesday 11/18 from 4pm-5pm</p>
+    <div class="session">
+      <span class="red">Individual Session</span>
+      <span class="link">Join Zoom here</span>
+    </div>
+    <div class="info">
+      <p>Suggested Topic by Eva</p>
+    </div>
+    <div class="topics">
+      <p class="homework">Homework 5, Problem 3</p>
+      <p  class="homework">Midterm Exam</p>
+    </div>
+
+    <p>About Eva</p>
+    <div class="professor">
+      <p class="photo">Photo </p>
+    </div>
+    <div class="list">
+      <ul>
+        <li>Enjoys skating</li>
+        <li>Has a kitten named Tamago</li>
+        <li>Interested in UI Design</li>
+      </ul>
+    </div>
+    <div class="dialog-button-container">
+      <button id="button-app-ins-edit" class="dialog-button positive">Edit Appointment</button>
+      <button id="button-app-ins-remove" class="dialog-button negative"
+              onclick="onClickDefault('dialog-app-ins')">Cancel Appointment</button>
+    </div>
+  </div>
+</div>
+<div id="dialog-edit-appointment">
+  <div class="dialog-title">Edit an Appointment</div>
+  <div class="dialog-row">
+    <label for="app-edit-date">Start time:</label>
+    <input type="datetime-local" id="app-edit-date" class="time-input">
+  </div>
+  <div class="dialog-row">
+    <label for="app-edit-duration">Duration (min):</label>
+    <input type="number" id="app-edit-duration" class="normal-input" placeholder="Meeting duration">
+  </div>
+  <div class="dialog-row">
+    <label for="app-edit-link">Zoom Link:</label>
+    <input type="url" id="app-edit-link" class="normal-input" placeholder="Input Zoom link here">
+  </div>
+  <div class="dialog-button-container">
+    <div class="dialog-footnote">A notification will be sent to Eva about the changes</div>
+    <button id="button-edit-app-confirm" class="dialog-button positive">Confirm Appointment</button>
   </div>
 </div>
 

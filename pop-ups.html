@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
 <head>
-  <link rel="stylesheet" href="css/dialog_style_bk.css">
+  <link rel="stylesheet" href="css/dialog_style.css">
+  <link rel="stylesheet" href="css/dialog_style_read_events.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="js/popup.js"></script>
@@ -17,7 +18,12 @@
   <button id="button-edit-appointment" class="button">Edit an appointment (Instructor)</button>
   <button id="button-edit-oh" class="button">Edit an Office Hour</button>
 </div>
-
+<div class="testing-env">
+  <button id="button-oh-st-not-joined" class="button">Office hour detail (Student, not joined)</button>
+  <button id="button-oh-ins" class="button">Office hour detail (Instructor)</button>
+  <button id="button-app-st" class="button">Appointment detail (Student)</button>
+  <button id="button-app-ins" class="button">Appointment detail (Instructor)</button>
+</div>
 <!-- Dialog for Common Features-->
 <div id="dialog-manage-course-student">
   <div class="dialog-title">Manage My Courses</div>
@@ -108,7 +114,7 @@
     </div>
   </div>
   <div class="dialog-button-container">
-    <button class="dialog-button positive">Make an Appointment</button>
+    <button id="button-manage-make-appointment" class="dialog-button positive">Make an Appointment</button>
     <button class="dialog-button negative">Remove this Course</button>
   </div>
 </div>
@@ -282,7 +288,8 @@
   </div>
   <div class="dialog-button-container">
     <div class="dialog-footnote">A notification will be sent to students of COMS4170 about the new student hour</div>
-    <button class="dialog-button positive">Create a Student Hour</button>
+    <button class="dialog-button positive"
+            onclick="onClickDefault('dialog-student-hour')">Create a Student Hour</button>
   </div>
 </div>
 
@@ -343,7 +350,8 @@
     </div>
   </div>
   <div class="dialog-button-container">
-    <button class="dialog-button positive">Confirm Appointment</button>
+    <button class="dialog-button positive"
+            onclick="onClickDefault('dialog-make-appointment')">Confirm Appointment</button>
   </div>
 </div>
 <!-- student's "edit appointment" page is same as "make appointment"'s -->
@@ -364,7 +372,7 @@
   </div>
   <div class="dialog-button-container">
     <div class="dialog-footnote">A notification will be sent to Eva about the changes</div>
-    <button class="dialog-button positive">Confirm Appointment</button>
+    <button id="button-edit-app-confirm" class="dialog-button positive">Confirm Appointment</button>
   </div>
 </div>
 
@@ -412,7 +420,183 @@
     <label for="oh-edit-apply-all">Apply to all future repeating OH</label>
   </div>
   <div class="dialog-button-container">
-    <button class="dialog-button positive">Confirm Changes</button>
+    <button id="button-edit-oh-confirm" class="dialog-button positive">Confirm Changes</button>
+  </div>
+</div>
+
+<!-- Dialogs for read event -->
+<div id="dialog-oh-st">
+  <div class="read-event">
+    <h2>Calculus | OH with Prof Woit</h2>
+    <div class="info">
+      <p>Tuesday 9/29 from 10am-12pm</p>
+    </div>
+    <div>
+      <span class="red">Group session</span>
+      <span class="link">Join Zoom here</span>
+    </div>
+    <div class="info">
+      <p>Topics your classmates want to discuss</p>
+    </div>
+    <div class="selection">
+      <input type="checkbox" name="Limits" value="Limits">
+      <label for="Limits">Limits</label> <br>
+      <div class="box1">
+      </div>
+      <div class="number_limit">
+        6
+      </div>
+      <input type="checkbox" name="Chain Rule" value="Chain Rule">
+      <label for="Chain Rule">Chain Rule</label> <br>
+      <div class="box2">
+      </div>
+      <div class="number_chain">
+        1
+      </div>
+      <input type="checkbox" name="advice" value="advice">
+      <label for="advice">Career Advice</label> <br>
+      <div class="box3">
+      </div>
+      <div class="number_advice">
+        1
+      </div>
+    </div>
+    <div>
+      <span class="blue">Create another topic</span>
+      <span class="attending">Students attending: 8</span>
+    </div>
+    <p>About Professor Woit</p>
+    <div class="professor">
+      <p class="photo">Photo </p>
+    </div>
+    <div class="list">
+      <ul>
+        <li>Enjoys skiing</li>
+        <li>Has a kitten named Tango</li>
+        <li>Interested in Quantum</li>
+      </ul>
+    </div>
+    <div class="dialog-button-container">
+      <div id="note-oh-st" class="dialog-footnote">You have indicated to attend this OH</div>
+      <button id="button-oh-st-add" class="dialog-button positive">Add to Calendar</button>
+      <button id="button-oh-st-remove" class="dialog-button negative">Remove from Calendar</button>
+    </div>
+  </div>
+</div>
+<div id="dialog-oh-ins">
+  <div class="read-event">
+    <h2>User Interface OH</h2>
+    <div class="info">
+      <p>Thursday 11/19 from 6pm-7pm</p>
+    </div>
+    <div>
+      <span class="red">Group session</span>
+      <span class="link">Join Zoom here</span>
+    </div>
+    <div class="info">
+      <p>Topics voted by students</p>
+    </div>
+    <div class="selection">
+      <input type="checkbox" name="Limits" value="Limits">
+      <label for="Limits">Javascript</label> <br>
+      <div class="box1">
+      </div>
+      <div class="number_limit">
+        6
+      </div>
+      <input type="checkbox" name="Chain Rule" value="Chain Rule">
+      <label for="Chain Rule">Storyboarding</label> <br>
+      <div class="box2">
+      </div>
+      <div class="number_chain">
+        1
+      </div>
+      <input type="checkbox" name="advice" value="advice">
+      <label for="advice">Figma</label> <br>
+      <div class="box3">
+      </div>
+      <div class="number_advice">
+        1
+      </div>
+    </div>
+    <div>
+      <span class="blue">Create another topic</span>
+      <span class="attending">Students attending: 8</span>
+    </div>
+    <div class="dialog-button-container">
+      <button id="button-oh-ins-edit" class="dialog-button positive">Edit this OH Event</button>
+      <button id="button-oh-ins-remove" class="dialog-button negative"
+              onclick="onClickDefault('dialog-oh-ins')">Cancel this OH Event</button>
+    </div>
+  </div>
+</div>
+
+<div id="dialog-app-st">
+  <div class="read-event">
+    <h2>Appointment with Prof Smith</h2>
+    <p>Wednesday 11/18 from 4pm-5pm</p>
+    <div class="session">
+      <span class="red">Individual Session</span>
+      <span class="link">Join Zoom here</span>
+    </div>
+    <div class="info">
+      <p>Suggested Topic &#128161;</p>
+    </div>
+    <div class="topics">
+      <p class="homework">Homework 5, Problem 3</p>
+      <p  class="homework">Midterm Exam</p>
+    </div>
+
+    <p>About Professor Smith</p>
+    <div class="professor">
+      <p class="photo">Photo </p>
+    </div>
+    <div class="list">
+      <ul>
+        <li>Enjoys skiing</li>
+        <li>Has a kitten named Tango</li>
+        <li>Interested in Quantum</li>
+      </ul>
+    </div>
+    <div class="dialog-button-container">
+      <button id="button-app-st-edit" class="dialog-button positive">Edit Appointment</button>
+      <button id="button-app-st-remove" class="dialog-button negative"
+              onclick="onClickDefault('dialog-app-st')">Cancel Appointment</button>
+    </div>
+  </div>
+</div>
+<div id="dialog-app-ins">
+  <div class="read-event">
+    <h2>Appointment with Eva</h2>
+    <p>Wednesday 11/18 from 4pm-5pm</p>
+    <div class="session">
+      <span class="red">Individual Session</span>
+      <span class="link">Join Zoom here</span>
+    </div>
+    <div class="info">
+      <p>Suggested Topic by Eva</p>
+    </div>
+    <div class="topics">
+      <p class="homework">Homework 5, Problem 3</p>
+      <p  class="homework">Midterm Exam</p>
+    </div>
+
+    <p>About Eva</p>
+    <div class="professor">
+      <p class="photo">Photo </p>
+    </div>
+    <div class="list">
+      <ul>
+        <li>Enjoys skating</li>
+        <li>Has a kitten named Tamago</li>
+        <li>Interested in UI Design</li>
+      </ul>
+    </div>
+    <div class="dialog-button-container">
+      <button id="button-app-ins-edit" class="dialog-button positive">Edit Appointment</button>
+      <button id="button-app-ins-remove" class="dialog-button negative"
+              onclick="onClickDefault('dialog-app-ins')">Cancel Appointment</button>
+    </div>
   </div>
 </div>
 

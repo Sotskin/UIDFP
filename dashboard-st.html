@@ -223,7 +223,7 @@
     </div>
   </div>
   <div class="dialog-button-container">
-    <button class="dialog-button positive">Make an Appointment</button>
+    <button id="button-manage-make-appointment" class="dialog-button positive">Make an Appointment</button>
     <button class="dialog-button negative">Remove this Course</button>
   </div>
 </div>
@@ -292,7 +292,7 @@
     <textarea id="app-suggested-topic" placeholder="Topic to discuss for the appointment..."></textarea>
   </div>
   <div class="dialog-row">
-    <label for="app-date">Start time:</label>
+    <label for="sh-start-time">Start time:</label>
     <input type="date" id="app-date" class="time-input">
   </div>
   <div id="app-avail-time">
@@ -317,7 +317,8 @@
     </div>
   </div>
   <div class="dialog-button-container">
-    <button class="dialog-button positive">Confirm Appointment</button>
+    <button class="dialog-button positive"
+            onclick="onClickDefault('dialog-make-appointment')">Confirm Appointment</button>
   </div>
 </div>
 
