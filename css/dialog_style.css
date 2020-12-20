@@ -1,0 +1,327 @@
+.ui-widget-overlay {
+    position: fixed;
+    background-color: #454545;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+/*.ui-front {*/
+/*    z-index: 1000000;*/
+/*}*/
+
+.solid-divider {
+    margin-top: 30px;
+    border-top: 3px solid #bbb;
+    margin-bottom: 0;
+}
+
+.dialog {
+    border: 1px solid #929B8C;
+    padding-bottom: 20px;
+    z-index: 1001;
+}
+
+.dialog.manage-courses {
+    background-color: #E2FBFE;
+}
+
+.dialog.student-hour {
+    background-color: #F3E5EC;
+}
+
+.dialog.appointments {
+    background-color: #E2EEFF;
+}
+
+.dialog.office-hour {
+    background-color: #FBE5A2;
+}
+
+/* Disable jquery dialog header since it is hard to work with*/
+.dialog .ui-dialog-titlebar {display:none}
+
+.dialog-title {
+    font-size: 30px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.dialog-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.dialog-row.checkbox {
+    justify-content: flex-start;
+}
+
+.dialog-row.checkbox label{
+    margin-left: 7px;
+    cursor: pointer;
+}
+
+.dialog-row.sub-checkboxes label{
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.dialog-row.low {
+    margin-top: 10px;
+}
+
+.dialog-row textarea {
+    width: 100%;
+    height: 130px;
+    padding: 10px;
+    overflow: auto;
+    font-size: 18px;
+    resize: none;
+}
+
+.dialog-row .time-input {
+    height: 30px;
+    font-size: 18px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.dialog-row .normal-input {
+    width: 300px;
+    height: 30px;
+    cursor: text;
+    font-size: 18px;
+    margin-left: 40px;
+}
+
+.dialog-footnote {
+    color: #5f5f5f;
+    font-size: 12px;
+
+}
+
+.dialog-button-container {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    display: flex;
+}
+
+.dialog-button-container button {
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.dialog-button {
+    width: 240px;
+    height: 44px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+.dialog-button.positive {
+    color: #4497E3;
+    border: 2px solid #4497E3;
+}
+
+.dialog-button.negative {
+    color: #C23131;
+    border: 2px solid #C23131;
+}
+
+/* A bit hacky why to create a button group (don't want to include bootstrap) */
+.button-group {
+    list-style-type: none;
+}
+.button-group input{
+    display: none;
+}
+.button-group input:checked+label{
+    background: #B6D1FA;
+}
+.button-group.normal {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.button-group.normal label {
+    width: 85px;
+    line-height: 45px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.button-group.long label {
+    width: 120px;
+    line-height: 29px; /* with vertical align, need to use line-height instead of height */
+}
+.button-group label {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    background: #FFFFFF;
+    border: 2px solid;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.button-group label:hover {
+    background: #EBF1FF;
+}
+
+/*Manage my courses related*/
+.ia-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.ia-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 1px solid;
+}
+
+.ia-name {
+    font-size: 18px;
+    text-align: right;
+    min-width: 200px;
+}
+
+.ia-detail-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+.ia-detail-edit {
+    font-size: 12px;
+    text-align: right;
+    margin-top: 5px;
+    display: block;
+}
+
+.ia-container {
+    width: auto;
+    min-height: 165px;
+    max-height: 300px;
+    overflow: auto;
+    background-color: #FFFFFF;
+    border: 1px solid;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 10px 30px 10px 10px;
+}
+
+.ia-container-user {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-left: 10px;
+}
+
+.ia-container-user .ia-detail-container {
+    padding-bottom: 0;
+}
+
+.course-select {
+    width: 330px;
+    height: 30px;
+    font-size: 18px;
+    margin-left: 40px;
+}
+
+.button-add-class {
+    height: 30px;
+    width: 30px;
+    font-size: 24px;
+    border: 1px solid;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+#enroll-search-form {
+    display: flex;
+    justify-content: flex-end;
+    width: 350px;
+    height: 30px;
+}
+
+#enroll-search-input {
+    flex-grow: 2;
+    font-size: 18px;
+}
+
+#enroll-search-submit {
+    font-size: 18px;
+    width: 90px;
+    background-color: #FFFFFF;
+    border: 1px solid #5f5f5f;
+    cursor: pointer;
+}
+
+#enroll-search-result {
+    display: none;
+}
+
+#enroll-choice-form {
+    align-items: flex-start;
+}
+
+#enroll-radio-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#enroll-radio-list div {
+    padding-bottom: 10px;
+}
+
+#enroll-radio-list input {
+    height: 18px;
+    width: 18px;
+}
+
+#enroll-choice-form label {
+    cursor: pointer;
+}
+
+/*student hour*/
+
+/*appointments*/
+#app-avail-time {
+    display: none;
+}
+
+/*office hour*/
+#oh-radio-list {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#oh-radio-list > div:not(:first-of-type)  {
+    margin-top: 15px;
+}
+
+#oh-radio-list input+label {
+    cursor: pointer;
+}

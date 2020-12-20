@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/dashboard-style.css">
+  <link rel="stylesheet" href="css/dialog_style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="js/popup.js"></script>
   <title>Dashboard</title>
 </head>
 <body>
@@ -27,7 +31,7 @@
       Welcome back, Eva!
     </div>
     <div class="log-out">
-      log out
+      <a href="signin.html">log out</a>
     </div>
   </div>
 </div>
@@ -58,13 +62,13 @@
       open in iCal
     </div>
     <div class=button>
-      <button  class=button1>Manage my courses</button>
+      <button id="button-manage-course" class=button1>Manage my courses</button>
     </div>
     <div class=button>
-      <button class=button2>Make an appointment</button>
+      <button id="button-make-appointment" class=button2>Make an appointment</button>
     </div>
     <div class=buttons>
-      <button class=button3>Find more OH</button>
+      <button class=button3 onclick="location.href = 'calendar-st.html'">Go to calendar</button>
     </div>
   </div>
   <div class="right-panel">
@@ -128,5 +132,194 @@
       </div>
     </div>
   </div>
+</div>
+
+<div id="dialog-manage-course-student">
+  <div class="dialog-title">Manage My Courses</div>
+  <div class="dialog-row">
+    <label for="course-select-student">Course:</label>
+    <select id="course-select-student" class="course-select">
+      <option selected="selected">COMS4170 User Interface Design</option>
+      <option>COMS4111 Introduction To Databases</option>
+    </select>
+    <button class="button-add-class"
+            onclick="onClickAddCourse('dialog-manage-course-student')">+</button>
+  </div>
+  <div class="dialog-row">You are a student of this class</div>
+  <div class="ia-container">
+    <div>Professor:</div>
+    <div class="ia-detail-container">
+      <div class="ia-photo"></div>
+      <div>
+        <div class="ia-name">Prof. Brian A. Smith</div>
+        <div>
+          <div class="ia-detail-row">
+            <span>Office hour:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Zoom link:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Email:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Website:</span>
+            <span>XXXXXX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>IAs:</div>
+    <div class="ia-detail-container">
+      <div class="ia-photo"></div>
+      <div>
+        <div class="ia-name">Vishnu Nair (Head TA)</div>
+        <div>
+          <div class="ia-detail-row">
+            <span>Office hour:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Zoom link:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Email:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Website:</span>
+            <span>XXXXXX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ia-detail-container">
+      <div class="ia-photo"></div>
+      <div>
+        <div class="ia-name">Lea Broudo</div>
+        <div>
+          <div class="ia-detail-row">
+            <span>Office hour:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Zoom link:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Email:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Website:</span>
+            <span>XXXXXX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dialog-button-container">
+    <button class="dialog-button positive">Make an Appointment</button>
+    <button class="dialog-button negative">Remove this Course</button>
+  </div>
+</div>
+<div id="dialog-enroll-course">
+  <div class="dialog-title">Enroll in a Course</div>
+  <div class="dialog-row">
+    <span>Course:</span>
+    <form id="enroll-search-form"> <!-- action="/not_implemented" -->
+      <input id="enroll-search-input" name="search_query" type="text">
+      <input id="enroll-search-submit" type="submit" value="Search">
+    </form>
+  </div>
+  <div id="enroll-search-result">
+    <hr class="solid-divider">
+    <div class="dialog-title">COMS4170 User Interface Design</div>
+    <form id="enroll-choice-form" class="dialog-row">
+      <div>Enroll as:</div>
+      <div id="enroll-radio-list">
+        <div>
+          <div>
+            <input type="radio" name="enroll-choice-item" id="enroll-choice-student" value="student">
+            <label for="enroll-choice-student">Student</label>
+          </div>
+          <div>
+            <input type="radio" name="enroll-choice-item" id="enroll-choice-instructor" value="instructor">
+            <label for="enroll-choice-instructor">Instructor</label>
+          </div>
+          <div>
+            <input type="radio" name="enroll-choice-item" id="enroll-choice-professor" value="professor">
+            <label for="enroll-choice-professor">Professor</label>
+          </div>
+        </div>
+        <button class="dialog-button positive" type="submit">Confirm Enrollment</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div id="dialog-make-appointment">
+  <div class="dialog-title">Make an Appointment</div>
+  <div class="dialog-row">
+    <label for="course-select-app">Course:</label>
+    <select id="course-select-app" class="course-select">
+      <option selected="selected">COMS4170 User Interface Design</option>
+      <option>COMS4111 Introduction To Databases</option>
+    </select>
+  </div>
+  <div class="dialog-row">
+    <label for="instructor-select-app">Instructor:</label>
+    <select id="instructor-select-app" class="course-select">
+      <option selected="selected">Prof. Brian A. Smith</option>
+      <option>Vishnu Nair</option>
+      <option>Lea Broudo</option>
+    </select>
+  </div>
+  <div class="dialog-row">
+    <div>Duration</div>
+    <div class="button-group long">
+      <input type="radio" name="sh-duration" id="app-duration-60" value="60">
+      <label for="app-duration-60">60min</label>
+      <input type="radio" name="sh-duration" id="app-duration-90" value="90">
+      <label for="app-duration-90">90min</label>
+    </div>
+  </div>
+  <label class="dialog-row" for="app-suggested-topic">Suggest a topic to discuss</label>
+  <div class="dialog-row">
+    <textarea id="app-suggested-topic" placeholder="Topic to discuss for the appointment..."></textarea>
+  </div>
+  <div class="dialog-row">
+    <label for="app-date">Start time:</label>
+    <input type="date" id="app-date" class="time-input">
+  </div>
+  <div id="app-avail-time">
+    <div class="dialog-row">Available spots:</div>
+    <div class="dialog-row">
+      <div class="button-group normal">
+        <input type="radio" name="app-time" id="app-time-1" value="1">
+        <label for="app-time-1">11:30</label>
+        <input type="radio" name="app-time" id="app-time-2" value="2">
+        <label for="app-time-2">13:00</label>
+        <input type="radio" name="app-time" id="app-time-3" value="3">
+        <label for="app-time-3">13:30</label>
+        <input type="radio" name="app-time" id="app-time-4" value="4">
+        <label for="app-time-4">14:00</label>
+        <input type="radio" name="app-time" id="app-time-5" value="5">
+        <label for="app-time-5">15:00</label>
+        <input type="radio" name="app-time" id="app-time-6" value="6">
+        <label for="app-time-6">16:00</label>
+        <input type="radio" name="app-time" id="app-time-7" value="7">
+        <label for="app-time-7">16:30</label>
+      </div>
+    </div>
+  </div>
+  <div class="dialog-button-container">
+    <button class="dialog-button positive">Confirm Appointment</button>
+  </div>
+</div>
+
 </body>
 </html>

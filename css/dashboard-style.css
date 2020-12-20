@@ -19,7 +19,7 @@ a {
   margin-top: 2.5px;
   height: 891px;
   vertical-align: center;
-  overflow: hidden;
+  overflow: auto;
   width: 100%;
   background: #F9F9F9;
 }
@@ -103,43 +103,46 @@ a {
 }
 
 .button1 {
-    width: 274px;
-    height: 44px;
-    background-color: #FFFFFF;
-    margin-left: 22px;
-    margin-bottom: 10px;
-    margin-top: 20px;
-    font-size: 22px;
-    color: #9D916D;
-    border: 2px solid #FBE5A2;
-    border-radius: 4px;
-    box-shadow: 2px 2px #CFCECE;
+  width: 274px;
+  height: 44px;
+  background-color: #FFFFFF;
+  margin-left: 22px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-size: 22px;
+  color: #9D916D;
+  border: 2px solid #FBE5A2;
+  border-radius: 4px;
+  box-shadow: 2px 2px #CFCECE;
+  cursor: pointer;
 }
 
 .button2 {
-    width: 274px;
-    height: 44px;
-    background-color: #FFFFFF;
-    margin-left: 22px;
-    margin-bottom: 10px;
-    font-size: 22px;
-    color: #8498B5;
-    border: 2px solid #B6D1FA;
-    border-radius: 4px;
-    box-shadow: 2px 2px #CFCECE;
+  width: 274px;
+  height: 44px;
+  background-color: #FFFFFF;
+  margin-left: 22px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #8498B5;
+  border: 2px solid #B6D1FA;
+  border-radius: 4px;
+  box-shadow: 2px 2px #CFCECE;
+  cursor: pointer;
 }
 
 .button3 {
-    width: 274px;
-    height: 44px;
-    background-color: #FFFFFF;
-    margin-left: 22px;
-    margin-bottom: 10px;
-    font-size: 22px;
-    color: #9D8892;
-    border: 2px solid #D9BDCB;
-    border-radius: 4px;
-    box-shadow: 2px 2px #CFCECE;
+  width: 274px;
+  height: 44px;
+  background-color: #FFFFFF;
+  margin-left: 22px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #9D8892;
+  border: 2px solid #D9BDCB;
+  border-radius: 4px;
+  box-shadow: 2px 2px #CFCECE;
+  cursor: pointer;
 }
 .at-a-glance {
   width: 743px;

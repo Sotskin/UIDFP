@@ -9,7 +9,8 @@ const onClickAddCourse = (actorName) => {
 }
 
 const reCenterDialog = () => {
-    $(".ui-dialog-content").dialog("option","position","center");
+    console.log("Recenter!")
+    $(".ui-dialog-content").dialog("option", "position", {my: "center", at: "center", of: window});
 }
 
 $(function() {
@@ -128,6 +129,14 @@ $(function() {
         e.preventDefault()
         let $dialog_manage_course = is_professor ?  $("#dialog-manage-course-professor") : $("#dialog-manage-course-student");
         $dialog_manage_course.dialog("open");
+    });
+    $("#button-manage-course-student").on("click", function(e) {
+        e.preventDefault()
+        $("#dialog-manage-course-student").dialog("open");
+    });
+    $("#button-manage-course-professor").on("click", function(e) {
+        e.preventDefault()
+        $("#dialog-manage-course-professor").dialog("open");
     });
     $("#button-student-hour").on("click", function(e) {
         e.preventDefault()
