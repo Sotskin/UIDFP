@@ -3,6 +3,11 @@ body {
   color: #454545;
 }
 
+a {
+  text-decoration: none;
+  color: #91A6C5;
+}
+
 .header {
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
