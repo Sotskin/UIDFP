@@ -1,18 +1,27 @@
 body {
   font-family: Arial, sans-serif;
+  color: #454545;
+}
+
+a {
+  text-decoration: none;
+  color: #91A6C5;
 }
 
 .header {
   background: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
   height: 133px;
+  width: 100%;
+  overflow: hidden;
 }
 .main-dashboard {
-  background: #E5E5E5;
+  margin-top: 2.5px;
   height: 891px;
   vertical-align: center;
   overflow: hidden;
   width: 100%;
+  background: #F9F9F9;
 }
 
 .title {
@@ -30,7 +39,7 @@ body {
   color: #91A6C5;
   font-size: 18px;
   padding-right: 30px;
-  line-height: 133px;
+  line-height: 130px;
   font-weight: lighter;
 }
 
@@ -46,16 +55,239 @@ body {
 }
 
 .active-tab {
-  border-bottom: 5px solid #91A6C5;
+  border-bottom: 15px inset #91A6C5;
 }
+
 .left-panel {
-  width: 500px;
-  height: 100%;
+  width: 318px;
+  height: 891px;
   display: inline-block;
-  background: purple;
+
+  float: left;
+  margin-left: 97px;
 }
 .right-panel {
   display: inline-block;
   height: 100%;
-  background: red;
+
+}
+.happy-day {
+  font-size: 40px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.prev-date {
+  font-size: 22px;
+}
+.arrows {
+  float: right;
+  margin-right: 4px;
+}
+
+.prev-calendar {
+  width: 100%;
+  height: 401px;
+  box-shadow:0px 0px 0px 2px #929B8C inset;
+  margin-top: 3px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  padding: 6px;
+}
+
+.open-in-ical {
+  text-align: right;
+  color: #4497E3;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.button1 {
+    width: 274px;
+    height: 44px;
+    background-color: #FFFFFF;
+    margin-left: 22px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 22px;
+    color: #9D916D;
+    border: 2px solid #FBE5A2;
+    border-radius: 4px;
+    box-shadow: 2px 2px #CFCECE;
+}
+
+.button2 {
+    width: 274px;
+    height: 44px;
+    background-color: #FFFFFF;
+    margin-left: 22px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #8498B5;
+    border: 2px solid #B6D1FA;
+    border-radius: 4px;
+    box-shadow: 2px 2px #CFCECE;
+}
+
+.button3 {
+    width: 274px;
+    height: 44px;
+    background-color: #FFFFFF;
+    margin-left: 22px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #9D8892;
+    border: 2px solid #D9BDCB;
+    border-radius: 4px;
+    box-shadow: 2px 2px #CFCECE;
+}
+.at-a-glance {
+  width: 743px;
+  height: 711px;
+  background: #E3EEDC;
+  border: 2px solid #929B8C;
+  border-radius: 5px;
+  margin-top: 70px;
+  margin-left: 80px;
+  padding: 40px;
+  padding-left: 60px;
+  overflow: scroll;
+}
+
+.prev-hour2-class {
+  width: 255px;
+  height: 85px;
+  background: #FBE5A2;
+  font-size: 18px;
+  border-left-style: solid;
+  border-left-width: 24px;
+  border-left-color: #F2D068;
+  margin-left: 10px;
+  margin-top: 20px;
+  line-height: 85px;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+.prev-TA-OH {
+  width: 255px;
+  height: 57px;
+  background: #D9BDCB;
+  font-size: 18px;
+  border-left-style: solid;
+  border-left-width: 24px;
+  border-left-color: #C39AAF;
+  margin-left: 10px;
+  margin-top: 20px;
+  line-height: 57px;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+.prev-meeting {
+  width: 255px;
+  height: 57px;
+  background: #B6D1FA;
+  font-size: 18px;
+  border-left-style: solid;
+  border-left-width: 24px;
+  border-left-color: #89ACE1;
+  margin-left: 10px;
+  margin-top: 20px;
+  line-height: 57px;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+.at-a-glance-title {
+  font-size: 30px;
+}
+
+.session {
+  font-size: 25px;
+  margin-top: 25px;
+}
+
+.specifiers {
+  margin-left: 100px;
+  margin-right: 250px;
+  margin-top: 20px;
+}
+
+.session-type {
+  color: #C23131;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.session-location {
+  color: #4497E3;
+  font-size: 20px;
+  text-decoration: underline;
+  float: right;
+}
+
+.topics-title {
+  margin-left: 25px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.topic {
+  font-size: 18px;
+  margin-left: 90px;
+  margin-bottom: 10px;
+}
+
+.vote-bar {
+  height: 14px;
+  float: left;
+  background: #D9BDCB;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.vote-number {
+  float: left;
+  font-size: 14px;
+  line-height: 35px;
+  padding-left: 8px;
+}
+
+.bar1 {
+  width: 243px;
+}
+
+.bar2 {
+  width: 60px;
+}
+
+.bar3 {
+  width: 223px;
+}
+
+.create-topic {
+  margin-left: 120px;
+  font-size: 18px;
+  color: #4497E3;
+  text-decoration: underline;
+}
+
+.comment {
+  margin-left: 90px;
+  font-size: 18px;
+  color: #4497E3;
+  text-decoration: underline;
+}
+
+.change-appointment {
+  margin-left: 25px;
+  margin-top:20px;
+  font-size: 18px;
+  color: #4497E3;
+  text-decoration: underline;
 }
