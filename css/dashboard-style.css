@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  color: #454545;
+  background: lightgray;
 }
 
 a {
@@ -30,7 +30,7 @@ a {
   color: #91A6C5;
   font-size: 38px;
   line-height: 133px;
-  padding-left: 97px;
+  padding-left: 100px;
   padding-right: 70px;
 }
 
@@ -38,20 +38,43 @@ a {
   float: left;
   color: #91A6C5;
   font-size: 18px;
-  padding-right: 30px;
-  line-height: 130px;
+  padding-right: 66px;
+  line-height: 133px;
+  font-weight: lighter;
+  position: relative;
   font-weight: lighter;
 }
 
+.notification {
+  width: 5px;
+  height: 5px;
+  margin-left: 144px;
+  margin-top: -25px;
+  border-radius: 50%;
+  background: #91A6C5;
+  margin-left: 744px;
+  margin-top: -80px;
+}
+
+.current-tab {
+  background-color: #91A6C5;
+  width: 140px;
+  height: 5px;
+  margin-left: 308px;
+  margin-top: 129px;
+}
+
+
 .right-dashboard {
   float: right;
-  padding-top: 40px;
   padding-right: 35px;
+  margin-top: -10px;
 }
 
 .log-out {
   text-align: right;
   color: #91A6C5;
+    margin-top: 3px;
 }
 
 .active-tab {
@@ -61,10 +84,9 @@ a {
 .left-panel {
   width: 318px;
   height: 891px;
-  display: inline-block;
-
   float: left;
   margin-left: 97px;
+  margin-top: 25px;
 }
 .right-panel {
   display: inline-block;
@@ -74,15 +96,21 @@ a {
 .happy-day {
   font-size: 40px;
   text-align: center;
-  padding-top: 15px;
+  margin-top: -5px;
   padding-bottom: 15px;
+  margin-left: -11px;
+  color: #454545;
 }
 .prev-date {
   font-size: 22px;
+  color: #454545;
+  margin-top: 5px;
+  margin-left: 3px;
 }
 .arrows {
   float: right;
   margin-right: 4px;
+  color: #454545;
 }
 
 .prev-calendar {
@@ -109,7 +137,7 @@ a {
   margin-left: 22px;
   margin-bottom: 10px;
   margin-top: 20px;
-  font-size: 22px;
+  font-size: 21px;
   color: #9D916D;
   border: 2px solid #FBE5A2;
   border-radius: 4px;
@@ -123,7 +151,7 @@ a {
   background-color: #FFFFFF;
   margin-left: 22px;
   margin-bottom: 10px;
-  font-size: 22px;
+  font-size: 21px;
   color: #8498B5;
   border: 2px solid #B6D1FA;
   border-radius: 4px;
@@ -137,7 +165,7 @@ a {
   background-color: #FFFFFF;
   margin-left: 22px;
   margin-bottom: 10px;
-  font-size: 22px;
+  font-size: 21px;
   color: #9D8892;
   border: 2px solid #D9BDCB;
   border-radius: 4px;
@@ -161,7 +189,7 @@ a {
   width: 255px;
   height: 85px;
   background: #FBE5A2;
-  font-size: 18px;
+  font-size: 17px;
   border-left-style: solid;
   border-left-width: 24px;
   border-left-color: #F2D068;
@@ -177,7 +205,7 @@ a {
   width: 255px;
   height: 57px;
   background: #D9BDCB;
-  font-size: 18px;
+  font-size: 17px;
   border-left-style: solid;
   border-left-width: 24px;
   border-left-color: #C39AAF;
@@ -193,7 +221,7 @@ a {
   width: 255px;
   height: 57px;
   background: #B6D1FA;
-  font-size: 18px;
+  font-size: 17px;
   border-left-style: solid;
   border-left-width: 24px;
   border-left-color: #89ACE1;

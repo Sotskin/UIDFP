@@ -17,7 +17,7 @@ h1 {
   font-family: Arial, sans-serif;
   font-weight: normal;
   color: #454545;
-  margin-top: 25px;
+  margin-top: 17px;
 }
 
 .month {
@@ -347,7 +347,7 @@ input[type=checkbox] {
   border: 2px solid #FBE5A2;
   border-radius: 4px;
   box-shadow: 2px 2px #CFCECE;
-  margin-top: 2px;
+  margin-top: 15px;
   cursor: pointer;
 }
 
