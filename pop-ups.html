@@ -1,417 +1,603 @@
 <!doctype html>
 <html>
 <head>
-    <link rel="stylesheet" href="dialog_style.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-    <script src="js/popup.js"></script>
+  <link rel="stylesheet" href="css/dialog_style.css">
+  <link rel="stylesheet" href="css/dialog_style_read_events.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="js/popup.js"></script>
+  <title>A place to hold all Pop-ups</title>
 </head>
 
 <body>
+<!-- Buttons -->
 <div class="testing-env">
-    <button id="button-manage-course" class="button">Manage my courses</button>
-    <button id="button-student-hour" class="button">Create Student Hour</button>
-    <button id="button-make-appointment" class="button">Make/Edit an appointment (Student)</button>
-    <button id="button-edit-appointment" class="button">Edit an appointment (Instructor)</button>
-    <button id="button-edit-oh" class="button">Edit an Office Hour</button>
+  <button id="button-manage-course" class="button">Manage my courses</button>
+  <button id="button-student-hour" class="button">Create Student Hour</button>
+  <button id="button-make-appointment" class="button">Make/Edit an appointment (Student)</button>
+  <button id="button-edit-appointment" class="button">Edit an appointment (Instructor)</button>
+  <button id="button-edit-oh" class="button">Edit an Office Hour</button>
 </div>
-
+<div class="testing-env">
+  <button id="button-oh-st-not-joined" class="button">Office hour detail (Student, not joined)</button>
+  <button id="button-oh-ins" class="button">Office hour detail (Instructor)</button>
+  <button id="button-app-st" class="button">Appointment detail (Student)</button>
+  <button id="button-app-ins" class="button">Appointment detail (Instructor)</button>
+</div>
 <!-- Dialog for Common Features-->
 <div id="dialog-manage-course-student">
-    <div class="dialog-title">Manage My Courses</div>
-    <div class="dialog-row">
-        <label for="course-select-student">Course:</label>
-        <select id="course-select-student" class="course-select">
-            <option selected="selected">COMS4170 User Interface Design</option>
-            <option>COMS4111 Introduction To Databases</option>
-        </select>
-        <button class="button-add-class"
-                onclick="onClickAddCourse('dialog-manage-course-student')">+</button>
-    </div>
-    <div class="dialog-row">You are a student of this class</div>
-    <div class="ia-container">
-        <div>Professor:</div>
-        <div class="ia-detail-container">
-            <div class="ia-photo"></div>
-            <div>
-                <div class="ia-name">Prof. Brian A. Smith</div>
-                <div>
-                    <div class="ia-detail-row">
-                        <span>Office hour:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Zoom link:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Email:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Website:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                </div>
-            </div>
+  <div class="dialog-title">Manage My Courses</div>
+  <div class="dialog-row">
+    <label for="course-select-student">Course:</label>
+    <select id="course-select-student" class="course-select">
+      <option selected="selected">COMS4170 User Interface Design</option>
+      <option>COMS4111 Introduction To Databases</option>
+    </select>
+    <button class="button-add-class"
+            onclick="onClickAddCourse('dialog-manage-course-student')">+</button>
+  </div>
+  <div class="dialog-row">You are a student of this class</div>
+  <div class="ia-container">
+    <div>Professor:</div>
+    <div class="ia-detail-container">
+      <div class="ia-photo"></div>
+      <div>
+        <div class="ia-name">Prof. Brian A. Smith</div>
+        <div>
+          <div class="ia-detail-row">
+            <span>Office hour:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Zoom link:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Email:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Website:</span>
+            <span>XXXXXX</span>
+          </div>
         </div>
-        <div>IAs:</div>
-        <div class="ia-detail-container">
-            <div class="ia-photo"></div>
-            <div>
-                <div class="ia-name">Vishnu Nair (Head TA)</div>
-                <div>
-                    <div class="ia-detail-row">
-                        <span>Office hour:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Zoom link:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Email:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Website:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="ia-detail-container">
-            <div class="ia-photo"></div>
-            <div>
-                <div class="ia-name">Lea Broudo</div>
-                <div>
-                    <div class="ia-detail-row">
-                        <span>Office hour:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Zoom link:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Email:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Website:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <div class="dialog-button-container">
-        <button class="dialog-button positive">Make an Appointment</button>
-        <button class="dialog-button negative">Remove this Course</button>
+    <div>IAs:</div>
+    <div class="ia-detail-container">
+      <div class="ia-photo"></div>
+      <div>
+        <div class="ia-name">Vishnu Nair (Head TA)</div>
+        <div>
+          <div class="ia-detail-row">
+            <span>Office hour:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Zoom link:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Email:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Website:</span>
+            <span>XXXXXX</span>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="ia-detail-container">
+      <div class="ia-photo"></div>
+      <div>
+        <div class="ia-name">Lea Broudo</div>
+        <div>
+          <div class="ia-detail-row">
+            <span>Office hour:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Zoom link:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Email:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Website:</span>
+            <span>XXXXXX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dialog-button-container">
+    <button id="button-manage-make-appointment" class="dialog-button positive">Make an Appointment</button>
+    <button class="dialog-button negative">Remove this Course</button>
+  </div>
 </div>
 <div id="dialog-manage-course-professor">
-    <div class="dialog-title">Manage My Courses</div>
-    <div class="dialog-row">
-        <label for="course-select-professor">Course:</label>
-        <select id="course-select-professor" class="course-select">
-            <option selected="selected">COMS4170 User Interface Design</option>
-            <option>COMS4111 Introduction To Databases</option>
-        </select>
-        <button class="button-add-class"
-                onclick="onClickAddCourse('dialog-manage-course-professor')">+</button>
-    </div>
-    <div class="ia-container-user">
-        <div class="ia-detail-container">
-            <div class="ia-photo"></div>
-            <div>
-                <div class="ia-name">Prof. Brian A. Smith</div>
-                <div>
-                    <div class="ia-detail-row">
-                        <span>Office hour:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Zoom link:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Email:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Website:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                </div>
-                <a class="ia-detail-edit" href="placeholder.html">edit</a>
-            </div>
+  <div class="dialog-title">Manage My Courses</div>
+  <div class="dialog-row">
+    <label for="course-select-professor">Course:</label>
+    <select id="course-select-professor" class="course-select">
+      <option selected="selected">COMS4170 User Interface Design</option>
+      <option>COMS4111 Introduction To Databases</option>
+    </select>
+    <button class="button-add-class"
+            onclick="onClickAddCourse('dialog-manage-course-professor')">+</button>
+  </div>
+  <div class="ia-container-user">
+    <div class="ia-detail-container">
+      <div class="ia-photo"></div>
+      <div>
+        <div class="ia-name">Prof. Brian A. Smith</div>
+        <div>
+          <div class="ia-detail-row">
+            <span>Office hour:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Zoom link:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Email:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Website:</span>
+            <span>XXXXXX</span>
+          </div>
         </div>
+        <a class="ia-detail-edit" href="#">edit</a>
+      </div>
     </div>
+  </div>
 
-    <div class="dialog-row">You are an instructor of this class</div>
-    <div class="ia-container">
-<!--        <div>Professor:</div>-->
-        <div>IAs:</div>
-        <div class="ia-detail-container">
-            <div class="ia-photo"></div>
-            <div>
-                <div class="ia-name">Vishnu Nair (Head TA)</div>
-                <div>
-                    <div class="ia-detail-row">
-                        <span>Office hour:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Zoom link:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Email:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Website:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                </div>
-            </div>
+  <div class="dialog-row">You are an instructor of this class</div>
+  <div class="ia-container">
+    <!--        <div>Professor:</div>-->
+    <div>IAs:</div>
+    <div class="ia-detail-container">
+      <div class="ia-photo"></div>
+      <div>
+        <div class="ia-name">Vishnu Nair (Head TA)</div>
+        <div>
+          <div class="ia-detail-row">
+            <span>Office hour:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Zoom link:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Email:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Website:</span>
+            <span>XXXXXX</span>
+          </div>
         </div>
-        <div class="ia-detail-container">
-            <div class="ia-photo"></div>
-            <div>
-                <div class="ia-name">Lea Broudo</div>
-                <div>
-                    <div class="ia-detail-row">
-                        <span>Office hour:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Zoom link:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Email:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                    <div class="ia-detail-row">
-                        <span>Website:</span>
-                        <span>XXXXXX</span>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+    <div class="ia-detail-container">
+      <div class="ia-photo"></div>
+      <div>
+        <div class="ia-name">Lea Broudo</div>
+        <div>
+          <div class="ia-detail-row">
+            <span>Office hour:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Zoom link:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Email:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Website:</span>
+            <span>XXXXXX</span>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="dialog-button-container">
-        <button class="dialog-button negative">Remove this Course</button>
-    </div>
+  </div>
+  <div class="dialog-button-container">
+    <button class="dialog-button negative">Remove this Course</button>
+  </div>
 </div>
 <div id="dialog-enroll-course">
-    <div class="dialog-title">Enroll in a Course</div>
-    <div class="dialog-row">
-        <span>Course:</span>
-        <form id="enroll-search-form"> <!-- action="/not_implemented" -->
-            <input id="enroll-search-input" name="search_query" type="text">
-            <input id="enroll-search-submit" type="submit" value="Search">
-        </form>
-    </div>
-    <div id="enroll-search-result">
-        <hr class="solid-divider">
-        <div class="dialog-title">COMS4170 User Interface Design</div>
-        <form id="enroll-choice-form" class="dialog-row">
-            <div>Enroll as:</div>
-            <div id="enroll-radio-list">
-                <div>
-                    <div>
-                        <input type="radio" name="enroll-choice-item" id="enroll-choice-student" value="student">
-                        <label for="enroll-choice-student">Student</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="enroll-choice-item" id="enroll-choice-instructor" value="instructor">
-                        <label for="enroll-choice-instructor">Instructor</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="enroll-choice-item" id="enroll-choice-professor" value="professor">
-                        <label for="enroll-choice-professor">Professor</label>
-                    </div>
-                </div>
-                <button class="dialog-button positive" type="submit">Confirm Enrollment</button>
-            </div>
-        </form>
-    </div>
+  <div class="dialog-title">Enroll in a Course</div>
+  <div class="dialog-row">
+    <span>Course:</span>
+    <form id="enroll-search-form"> <!-- action="/not_implemented" -->
+      <input id="enroll-search-input" name="search_query" type="text">
+      <input id="enroll-search-submit" type="submit" value="Search">
+    </form>
+  </div>
+  <div id="enroll-search-result">
+    <hr class="solid-divider">
+    <div class="dialog-title">COMS4170 User Interface Design</div>
+    <form id="enroll-choice-form" class="dialog-row">
+      <div>Enroll as:</div>
+      <div id="enroll-radio-list">
+        <div>
+          <div>
+            <input type="radio" name="enroll-choice-item" id="enroll-choice-student" value="student">
+            <label for="enroll-choice-student">Student</label>
+          </div>
+          <div>
+            <input type="radio" name="enroll-choice-item" id="enroll-choice-instructor" value="instructor">
+            <label for="enroll-choice-instructor">Instructor</label>
+          </div>
+          <div>
+            <input type="radio" name="enroll-choice-item" id="enroll-choice-professor" value="professor">
+            <label for="enroll-choice-professor">Professor</label>
+          </div>
+        </div>
+        <button class="dialog-button positive" type="submit">Confirm Enrollment</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 <!-- Dialog for Student hour-->
 <div id="dialog-student-hour">
-    <div class="dialog-title">Create a Student Hour</div>
-    <div class="dialog-row">
-        <label for="course-select-sh">Course:</label>
-        <select id="course-select-sh" class="course-select">
-            <option selected="selected">COMS4170 User Interface Design</option>
-            <option>COMS4111 Introduction To Databases</option>
-        </select>
+  <div class="dialog-title">Create a Student Hour</div>
+  <div class="dialog-row">
+    <label for="course-select-sh">Course:</label>
+    <select id="course-select-sh" class="course-select">
+      <option selected="selected">COMS4170 User Interface Design</option>
+      <option>COMS4111 Introduction To Databases</option>
+    </select>
+  </div>
+  <div class="dialog-row">
+    <div>Duration</div>
+    <div class="button-group long">
+      <input type="radio" name="sh-duration" id="sh-duration-60" value="60">
+      <label for="sh-duration-60">60min</label>
+      <input type="radio" name="sh-duration" id="sh-duration-90" value="90">
+      <label for="sh-duration-90">90min</label>
     </div>
-    <div class="dialog-row">
-        <div>Duration</div>
-        <div class="button-group long">
-            <input type="radio" name="sh-duration" id="sh-duration-60" value="60">
-            <label for="sh-duration-60">60min</label>
-            <input type="radio" name="sh-duration" id="sh-duration-90" value="90">
-            <label for="sh-duration-90">90min</label>
-        </div>
+  </div>
+  <label class="dialog-row" for="sh-suggested-topic">Suggest a topic to discuss</label>
+  <div class="dialog-row">
+    <textarea id="sh-suggested-topic" placeholder="Topic to discuss with fellow students..."></textarea>
+  </div>
+  <div class="dialog-row sub-checkboxes low">
+    <div>
+      <input type="checkbox" id="sh-vote-topic">
+      <label for="sh-vote-topic">Vote for topic</label>
     </div>
-    <label class="dialog-row" for="sh-suggested-topic">Suggest a topic to discuss</label>
-    <div class="dialog-row">
-        <textarea id="sh-suggested-topic" placeholder="Topic to discuss with fellow students..."></textarea>
+    <div>
+      <input type="checkbox" id="sh-recurring">
+      <label for="sh-recurring">Recurring</label>
     </div>
-    <div class="dialog-row sub-checkboxes low">
-        <div>
-            <input type="checkbox" id="sh-vote-topic">
-            <label for="sh-vote-topic">Vote for topic</label>
-        </div>
-        <div>
-            <input type="checkbox" id="sh-recurring">
-            <label for="sh-recurring">Recurring</label>
-        </div>
-    </div>
-    <div class="dialog-row">
-        <label for="sh-start-time">Start time:</label>
-        <input type="datetime-local" id="sh-start-time" class="time-input">
-    </div>
-    <div class="dialog-button-container">
-        <div class="dialog-footnote">A notification will be sent to students of COMS4170 about the new student hour</div>
-        <button class="dialog-button positive">Create a Student Hour</button>
-    </div>
+  </div>
+  <div class="dialog-row">
+    <label for="sh-start-time">Start time:</label>
+    <input type="datetime-local" id="sh-start-time" class="time-input">
+  </div>
+  <div class="dialog-button-container">
+    <div class="dialog-footnote">A notification will be sent to students of COMS4170 about the new student hour</div>
+    <button class="dialog-button positive"
+            onclick="onClickDefault('dialog-student-hour')">Create a Student Hour</button>
+  </div>
 </div>
 
 <!-- Dialog for appointments-->
 <div id="dialog-make-appointment">
-    <div class="dialog-title">Make an Appointment</div>
+  <div class="dialog-title">Make an Appointment</div>
+  <div class="dialog-row">
+    <label for="course-select-app">Course:</label>
+    <select id="course-select-app" class="course-select">
+      <option selected="selected">COMS4170 User Interface Design</option>
+      <option>COMS4111 Introduction To Databases</option>
+    </select>
+  </div>
+  <div class="dialog-row">
+    <label for="instructor-select-app">Instructor:</label>
+    <select id="instructor-select-app" class="course-select">
+      <option selected="selected">Prof. Brian A. Smith</option>
+      <option>Vishnu Nair</option>
+      <option>Lea Broudo</option>
+    </select>
+  </div>
+  <div class="dialog-row">
+    <div>Duration</div>
+    <div class="button-group long">
+      <input type="radio" name="sh-duration" id="app-duration-60" value="60">
+      <label for="app-duration-60">60min</label>
+      <input type="radio" name="sh-duration" id="app-duration-90" value="90">
+      <label for="app-duration-90">90min</label>
+    </div>
+  </div>
+  <label class="dialog-row" for="app-suggested-topic">Suggest a topic to discuss</label>
+  <div class="dialog-row">
+    <textarea id="app-suggested-topic" placeholder="Topic to discuss for the appointment..."></textarea>
+  </div>
+  <div class="dialog-row">
+    <label for="sh-start-time">Start time:</label>
+    <input type="date" id="app-date" class="time-input">
+  </div>
+  <div id="app-avail-time">
+    <div class="dialog-row">Available spots:</div>
     <div class="dialog-row">
-        <label for="course-select-app">Course:</label>
-        <select id="course-select-app" class="course-select">
-            <option selected="selected">COMS4170 User Interface Design</option>
-            <option>COMS4111 Introduction To Databases</option>
-        </select>
+      <div class="button-group normal">
+        <input type="radio" name="app-time" id="app-time-1" value="1">
+        <label for="app-time-1">11:30</label>
+        <input type="radio" name="app-time" id="app-time-2" value="2">
+        <label for="app-time-2">13:00</label>
+        <input type="radio" name="app-time" id="app-time-3" value="3">
+        <label for="app-time-3">13:30</label>
+        <input type="radio" name="app-time" id="app-time-4" value="4">
+        <label for="app-time-4">14:00</label>
+        <input type="radio" name="app-time" id="app-time-5" value="5">
+        <label for="app-time-5">15:00</label>
+        <input type="radio" name="app-time" id="app-time-6" value="6">
+        <label for="app-time-6">16:00</label>
+        <input type="radio" name="app-time" id="app-time-7" value="7">
+        <label for="app-time-7">16:30</label>
+      </div>
     </div>
-    <div class="dialog-row">
-        <label for="instructor-select-app">Instructor:</label>
-        <select id="instructor-select-app" class="course-select">
-            <option selected="selected">Prof. Brian A. Smith</option>
-            <option>Vishnu Nair</option>
-            <option>Lea Broudo</option>
-        </select>
-    </div>
-    <div class="dialog-row">
-        <div>Duration</div>
-        <div class="button-group long">
-            <input type="radio" name="sh-duration" id="app-duration-60" value="60">
-            <label for="app-duration-60">60min</label>
-            <input type="radio" name="sh-duration" id="app-duration-90" value="90">
-            <label for="app-duration-90">90min</label>
-        </div>
-    </div>
-    <label class="dialog-row" for="app-suggested-topic">Suggest a topic to discuss</label>
-    <div class="dialog-row">
-        <textarea id="app-suggested-topic" placeholder="Topic to discuss for the appointment..."></textarea>
-    </div>
-    <div class="dialog-row">
-        <label for="sh-start-time">Start time:</label>
-        <input type="date" id="app-date" class="time-input">
-    </div>
-    <div id="app-avail-time">
-        <div class="dialog-row">Available spots:</div>
-        <div class="dialog-row">
-            <div class="button-group normal">
-                <input type="radio" name="app-time" id="app-time-1" value="1">
-                <label for="app-time-1">11:30</label>
-                <input type="radio" name="app-time" id="app-time-2" value="2">
-                <label for="app-time-2">13:00</label>
-                <input type="radio" name="app-time" id="app-time-3" value="3">
-                <label for="app-time-3">13:30</label>
-                <input type="radio" name="app-time" id="app-time-4" value="4">
-                <label for="app-time-4">14:00</label>
-                <input type="radio" name="app-time" id="app-time-5" value="5">
-                <label for="app-time-5">15:00</label>
-                <input type="radio" name="app-time" id="app-time-6" value="6">
-                <label for="app-time-6">16:00</label>
-                <input type="radio" name="app-time" id="app-time-7" value="7">
-                <label for="app-time-7">16:30</label>
-            </div>
-        </div>
-    </div>
-    <div class="dialog-button-container">
-        <button class="dialog-button positive">Confirm Appointment</button>
-    </div>
+  </div>
+  <div class="dialog-button-container">
+    <button class="dialog-button positive"
+            onclick="onClickDefault('dialog-make-appointment')">Confirm Appointment</button>
+  </div>
 </div>
 <!-- student's "edit appointment" page is same as "make appointment"'s -->
 <!-- instructor's "edit appointment" page is below -->
 <div id="dialog-edit-appointment">
-    <div class="dialog-title">Edit an Appointment</div>
-    <div class="dialog-row">
-        <label for="app-edit-date">Start time:</label>
-        <input type="datetime-local" id="app-edit-date" class="time-input">
-    </div>
-    <div class="dialog-row">
-        <label for="app-edit-duration">Duration (min):</label>
-        <input type="number" id="app-edit-duration" class="normal-input" placeholder="Meeting duration">
-    </div>
-    <div class="dialog-row">
-        <label for="app-edit-link">Zoom Link:</label>
-        <input type="url" id="app-edit-link" class="normal-input" placeholder="Input Zoom link here">
-    </div>
-    <div class="dialog-button-container">
-        <div class="dialog-footnote">A notification will be sent to Eva about the changes</div>
-        <button class="dialog-button positive">Confirm Appointment</button>
-    </div>
+  <div class="dialog-title">Edit an Appointment</div>
+  <div class="dialog-row">
+    <label for="app-edit-date">Start time:</label>
+    <input type="datetime-local" id="app-edit-date" class="time-input">
+  </div>
+  <div class="dialog-row">
+    <label for="app-edit-duration">Duration (min):</label>
+    <input type="number" id="app-edit-duration" class="normal-input" placeholder="Meeting duration">
+  </div>
+  <div class="dialog-row">
+    <label for="app-edit-link">Zoom Link:</label>
+    <input type="url" id="app-edit-link" class="normal-input" placeholder="Input Zoom link here">
+  </div>
+  <div class="dialog-button-container">
+    <div class="dialog-footnote">A notification will be sent to Eva about the changes</div>
+    <button id="button-edit-app-confirm" class="dialog-button positive">Confirm Appointment</button>
+  </div>
 </div>
 
 <!-- Dialog for office hour-->
 <div id="dialog-edit-oh">
-    <div class="dialog-title">Edit Office Hour</div>
-    <div class="dialog-row">
-        <div>Course:</div>
-        <div>COMS 4170 User Interface</div>
-    </div>
-    <div class="dialog-row">
-        <label for="oh-edit-date">Start time:</label>
-        <input type="datetime-local" id="oh-edit-date" class="time-input">
-    </div>
-    <div class="dialog-row">
-        <label for="oh-edit-duration">Duration (min):</label>
-        <input type="number" id="oh-edit-duration" class="normal-input" placeholder="OH duration">
-    </div>
-    <div class="dialog-row">
-        <label for="oh-edit-link">Zoom Link:</label>
-        <input type="url" id="oh-edit-link" class="normal-input" placeholder="Input Zoom link here">
-    </div>
+  <div class="dialog-title">Edit Office Hour</div>
+  <div class="dialog-row">
+    <div>Course:</div>
+    <div>COMS 4170 User Interface</div>
+  </div>
+  <div class="dialog-row">
+    <label for="oh-edit-date">Start time:</label>
+    <input type="datetime-local" id="oh-edit-date" class="time-input">
+  </div>
+  <div class="dialog-row">
+    <label for="oh-edit-duration">Duration (min):</label>
+    <input type="number" id="oh-edit-duration" class="normal-input" placeholder="OH duration">
+  </div>
+  <div class="dialog-row">
+    <label for="oh-edit-link">Zoom Link:</label>
+    <input type="url" id="oh-edit-link" class="normal-input" placeholder="Input Zoom link here">
+  </div>
 
-    <div id="oh-radio-list" class="dialog-row">
-        <div>
-            <input type="radio" name="enroll-choice-item" id="oh-topic-vote" value="vote">
-            <label for="oh-topic-vote">Allow students to vote OH topic</label>
-        </div>
-        <div>
-            <input type="radio" name="enroll-choice-item" id="oh-topic-fixed" value="fixed">
-            <label for="oh-topic-fixed">Set Fixed Topic: </label>
-        </div>
-        <div>
-            <input type="radio" name="enroll-choice-item" id="oh-topic-none" value="none">
-            <label for="oh-topic-none">Do not set any topic</label>
-        </div>
+  <div id="oh-radio-list" class="dialog-row">
+    <div>
+      <input type="radio" name="enroll-choice-item" id="oh-topic-vote" value="vote">
+      <label for="oh-topic-vote">Allow students to vote OH topic</label>
     </div>
+    <div>
+      <input type="radio" name="enroll-choice-item" id="oh-topic-fixed" value="fixed">
+      <label for="oh-topic-fixed">Set Fixed Topic: </label>
+    </div>
+    <div>
+      <input type="radio" name="enroll-choice-item" id="oh-topic-none" value="none">
+      <label for="oh-topic-none">Do not set any topic</label>
+    </div>
+  </div>
 
-    <div class="dialog-row checkbox">
-        <input type="checkbox" id="oh-edit-notify">
-        <label for="oh-edit-notify">Notify students about the change</label>
+  <div class="dialog-row checkbox">
+    <input type="checkbox" id="oh-edit-notify">
+    <label for="oh-edit-notify">Notify students about the change</label>
+  </div>
+  <div class="dialog-row checkbox">
+    <input type="checkbox" id="oh-edit-apply-all">
+    <label for="oh-edit-apply-all">Apply to all future repeating OH</label>
+  </div>
+  <div class="dialog-button-container">
+    <button id="button-edit-oh-confirm" class="dialog-button positive">Confirm Changes</button>
+  </div>
+</div>
+
+<!-- Dialogs for read event -->
+<div id="dialog-oh-st">
+  <div class="read-event">
+    <h2>Calculus | OH with Prof Woit</h2>
+    <div class="info">
+      <p>Tuesday 9/29 from 10am-12pm</p>
     </div>
-    <div class="dialog-row checkbox">
-        <input type="checkbox" id="oh-edit-apply-all">
-        <label for="oh-edit-apply-all">Apply to all future repeating OH</label>
+    <div>
+      <span class="red">Group session</span>
+      <span class="link">Join Zoom here</span>
+    </div>
+    <div class="info">
+      <p>Topics your classmates want to discuss</p>
+    </div>
+    <div class="selection">
+      <input type="checkbox" name="Limits" value="Limits">
+      <label for="Limits">Limits</label> <br>
+      <div class="box1">
+      </div>
+      <div class="number_limit">
+        6
+      </div>
+      <input type="checkbox" name="Chain Rule" value="Chain Rule">
+      <label for="Chain Rule">Chain Rule</label> <br>
+      <div class="box2">
+      </div>
+      <div class="number_chain">
+        1
+      </div>
+      <input type="checkbox" name="advice" value="advice">
+      <label for="advice">Career Advice</label> <br>
+      <div class="box3">
+      </div>
+      <div class="number_advice">
+        1
+      </div>
+    </div>
+    <div>
+      <span class="blue">Create another topic</span>
+      <span class="attending">Students attending: 8</span>
+    </div>
+    <p>About Professor Woit</p>
+    <div class="professor">
+      <p class="photo">Photo </p>
+    </div>
+    <div class="list">
+      <ul>
+        <li>Enjoys skiing</li>
+        <li>Has a kitten named Tango</li>
+        <li>Interested in Quantum</li>
+      </ul>
     </div>
     <div class="dialog-button-container">
-        <button class="dialog-button positive">Confirm Changes</button>
+      <div id="note-oh-st" class="dialog-footnote">You have indicated to attend this OH</div>
+      <button id="button-oh-st-add" class="dialog-button positive">Add to Calendar</button>
+      <button id="button-oh-st-remove" class="dialog-button negative">Remove from Calendar</button>
     </div>
+  </div>
+</div>
+<div id="dialog-oh-ins">
+  <div class="read-event">
+    <h2>User Interface OH</h2>
+    <div class="info">
+      <p>Thursday 11/19 from 6pm-7pm</p>
+    </div>
+    <div>
+      <span class="red">Group session</span>
+      <span class="link">Join Zoom here</span>
+    </div>
+    <div class="info">
+      <p>Topics voted by students</p>
+    </div>
+    <div class="selection">
+      <input type="checkbox" name="Limits" value="Limits">
+      <label for="Limits">Javascript</label> <br>
+      <div class="box1">
+      </div>
+      <div class="number_limit">
+        6
+      </div>
+      <input type="checkbox" name="Chain Rule" value="Chain Rule">
+      <label for="Chain Rule">Storyboarding</label> <br>
+      <div class="box2">
+      </div>
+      <div class="number_chain">
+        1
+      </div>
+      <input type="checkbox" name="advice" value="advice">
+      <label for="advice">Figma</label> <br>
+      <div class="box3">
+      </div>
+      <div class="number_advice">
+        1
+      </div>
+    </div>
+    <div>
+      <span class="blue">Create another topic</span>
+      <span class="attending">Students attending: 8</span>
+    </div>
+    <div class="dialog-button-container">
+      <button id="button-oh-ins-edit" class="dialog-button positive">Edit this OH Event</button>
+      <button id="button-oh-ins-remove" class="dialog-button negative"
+              onclick="onClickDefault('dialog-oh-ins')">Cancel this OH Event</button>
+    </div>
+  </div>
+</div>
+
+<div id="dialog-app-st">
+  <div class="read-event">
+    <h2>Appointment with Prof Smith</h2>
+    <p>Wednesday 11/18 from 4pm-5pm</p>
+    <div class="session">
+      <span class="red">Individual Session</span>
+      <span class="link">Join Zoom here</span>
+    </div>
+    <div class="info">
+      <p>Suggested Topic &#128161;</p>
+    </div>
+    <div class="topics">
+      <p class="homework">Homework 5, Problem 3</p>
+      <p  class="homework">Midterm Exam</p>
+    </div>
+
+    <p>About Professor Smith</p>
+    <div class="professor">
+      <p class="photo">Photo </p>
+    </div>
+    <div class="list">
+      <ul>
+        <li>Enjoys skiing</li>
+        <li>Has a kitten named Tango</li>
+        <li>Interested in Quantum</li>
+      </ul>
+    </div>
+    <div class="dialog-button-container">
+      <button id="button-app-st-edit" class="dialog-button positive">Edit Appointment</button>
+      <button id="button-app-st-remove" class="dialog-button negative"
+              onclick="onClickDefault('dialog-app-st')">Cancel Appointment</button>
+    </div>
+  </div>
+</div>
+<div id="dialog-app-ins">
+  <div class="read-event">
+    <h2>Appointment with Eva</h2>
+    <p>Wednesday 11/18 from 4pm-5pm</p>
+    <div class="session">
+      <span class="red">Individual Session</span>
+      <span class="link">Join Zoom here</span>
+    </div>
+    <div class="info">
+      <p>Suggested Topic by Eva</p>
+    </div>
+    <div class="topics">
+      <p class="homework">Homework 5, Problem 3</p>
+      <p  class="homework">Midterm Exam</p>
+    </div>
+
+    <p>About Eva</p>
+    <div class="professor">
+      <p class="photo">Photo </p>
+    </div>
+    <div class="list">
+      <ul>
+        <li>Enjoys skating</li>
+        <li>Has a kitten named Tamago</li>
+        <li>Interested in UI Design</li>
+      </ul>
+    </div>
+    <div class="dialog-button-container">
+      <button id="button-app-ins-edit" class="dialog-button positive">Edit Appointment</button>
+      <button id="button-app-ins-remove" class="dialog-button negative"
+              onclick="onClickDefault('dialog-app-ins')">Cancel Appointment</button>
+    </div>
+  </div>
 </div>
 
 </body>

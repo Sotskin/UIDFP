@@ -1,15 +1,15 @@
-body {
-    font-size: 20px;
-    font-family: "arial";
-    border-color: #929B8C;
-}
+/* Enable these styles for popup.html (working environment)
+/* body {*/
+/*    font-size: 20px;*/
+/*    font-family: "arial";*/
+/*    border-color: #929B8C;*/
+/*}*/
 
-/* for this branch only. delete .testing-env style when merging*/
-.testing-env {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/*.testing-env {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
 
 .ui-widget-overlay {
     position: fixed;
@@ -17,6 +17,9 @@ body {
     opacity: 0.3;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
 }
 
 .solid-divider {
@@ -28,6 +31,8 @@ body {
 .dialog {
     border: 1px solid #929B8C;
     padding-bottom: 20px;
+    z-index: 1001;
+    position: fixed;
 }
 
 .dialog.manage-courses {

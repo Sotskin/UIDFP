@@ -3,23 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>sign in</title>
-    <link rel="stylesheet" href="signup-style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/signin.js"></script>
+    <link rel="stylesheet" href="css/signup-style.css">
   </head>
   <body>
     <div class="sign-in">
       <div class="window-title">
         <span class="active-title">Sign in</span>
         <span class="top-divider"></span>
-        <span class="inactive-title">Sign up</span>
+        <a class="inactive-title" href="signup.html">Sign up</a>
       </div>
       <form>
         <div class="betweeninput">
           <label for="email">Email   </label>
-          <input type="text" id="emaiil" name="email">
+          <input type="email" id="email" name="email">
         </div>
         <div class="betweeninput">
           <label for="password">Password </label>
-          <input type="text" id="password" name="password">
+          <input type="password" id="password" name="password">
         </div>
       </form>
       <form class="check">
@@ -32,8 +35,8 @@
             </span>
           </div>
       </form>
-      <div id=submit>
-        <button type= "button" class="submit-sign-up" >Submit</button>
+      <div>
+        <button id="submit-sign-in" type= "button" class="submit-sign-up" >Submit</button>
       </div>
     </div>
   </body>
