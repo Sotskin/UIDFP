@@ -99,10 +99,6 @@ hr {
   text-decoration: none;
 }
 
-.active-tab {
-  border-bottom: 5px solid #91A6C5;
-}
-
 .notification {
   width: 5px;
   height: 5px;
@@ -326,7 +322,7 @@ get the numbers to center with the words */
 }
 
 .check {
-  margin-top: 320px;
+  margin-top: 315px;
   padding-left: 4px;
   font-family: Arial;
 }
@@ -360,6 +356,7 @@ input[type=checkbox] {
   width: 240px;
   height: 44px;
   background-color: #FFFFFF;
+  margin-bottom: 10px;
   font-size: 18px;
   color: #8498B5;
   border: 2px solid #B6D1FA;
