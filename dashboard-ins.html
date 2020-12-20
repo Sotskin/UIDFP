@@ -1,124 +1,259 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/dashboard-style.css">
-    <title>Dashboard</title>
-  </head>
-  <body>
-    <div class="header">
-      <div class="title">
-        MeetMe
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/dashboard-style.css">
+  <link rel="stylesheet" href="css/dialog_style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="js/popup.js"></script>
+  <title>Dashboard</title>
+</head>
+<body>
+<div class="header">
+  <div class="title">
+    MeetMe
+  </div>
+  <div class="head-tab active-tab">
+    Your Dashboard
+  </div>
+  <div class="head-tab">
+    <a href="calendar-ins.html">Calendar</a>
+  </div>
+  <div class="head-tab">
+    <a href="#">Notifications</a>
+  </div>
+  <div class="head-tab">
+    <a href="#">Help</a>
+  </div>
+  <div class="right-dashboard">
+    <div class="welcome-back">
+      Welcome back, Prof. Smith!
+    </div>
+    <div class="log-out">
+      <a href="signin.html">log out</a>
+    </div>
+  </div>
+</div>
+<div class="main-dashboard">
+  <div class="left-panel">
+    <div class="happy-day">
+      Happy Thursday!
+    </div>
+    <div class="prev-date">
+      <span>November 19, 2020</span>
+      <span class="arrows"> < > </span>
+    </div>
+    <div class="prev-calendar">
+      <div class="prev-meeting">
+        10 AM - 11 AM Appointment
       </div>
-      <div class="head-tab active-tab">
-        Your Dashboard
+      <div class="prev-TA-OH">
+        12 PM - 1 PM UID TA OH
       </div>
-      <div class="head-tab">
-        <a href="calendar-st.html"> Calendar</a>
+      <div class="prev-hour2-class">
+        2 PM - 4 PM UI Design
       </div>
-      <div class="head-tab">
-        Notifications
-      </div>
-      <div class="head-tab">
-        Help
-      </div>
-      <div class="right-dashboard">
-        <div class="welcome-back">
-          Welcome back, Prof. Smith!
-        </div>
-        <div class="log-out">
-          log out
-        </div>
+      <div class="prev-TA-OH">
+        6 PM - 7 PM Office Hours
       </div>
     </div>
-    <div class="main-dashboard">
-      <div class="left-panel">
-        <div class="happy-day">
-          Happy Thursday!
-        </div>
-        <div class="prev-date">
-          <span>November 19, 2020</span>
-          <span class="arrows"> < > </span>
-        </div>
-        <div class="prev-calendar">
-          <div class="prev-meeting">
-            10 AM - 11 AM Appointment
-          </div>
-          <div class="prev-TA-OH">
-            12 PM - 1 PM UID TA OH
-          </div>
-          <div class="prev-hour2-class">
-            2 PM - 4 PM UI Design
-          </div>
-          <div class="prev-TA-OH">
-            6 PM - 7 PM Office Hours
-          </div>
-        </div>
-        <div class="open-in-ical">
-          open in iCal
-        </div>
-        <div class=button>
-            <button  class=button1>Manage my courses</button>
-        </div>
-        <div class=button>
-            <button class=button2>Make an appointment</button>
-        </div>
-        <div class=buttons>
-            <button class=button3>Manage my Office Hours</button>
-        </div>
+    <div class="open-in-ical">
+      open in iCal
+    </div>
+    <div class=button>
+      <button id="button-manage-course-professor" class=button1>Manage my courses</button>
+    </div>
+    <div class=button>
+      <button class=button2>Edit my availability</button>
+    </div>
+    <div class=buttons>
+      <button class=button3>Manage my Office Hours</button>
+    </div>
+  </div>
+  <div class="right-panel">
+    <div class="at-a-glance">
+      <div class="at-a-glance-title">
+        At a glance
       </div>
-      <div class="right-panel">
-        <div class="at-a-glance">
-          <div class="at-a-glance-title">
-            At a glance
-          </div>
-          <div class="session">
-            &#9733; 10 AM - 11 AM Appointment with Sam
-          </div>
-          <div class="specifiers">
-            <span class="session-type">Individual session</span>
-            <span class="session-location">Join Zoom Here</span>
-          </div>
-          <div class="topics-title">
-            Topics suggested by Sam:
-          </div>
-          <div class="topic">
-            I was a bit confused about UCD loops and all the steps
-            involved with them so I wanted to make sure I'm doing everything
-            right.
-          </div>
-          <div class="comment">
-            Comment
-          </div>
-          <div class="change-appointment">
-            Change Appointment
-          </div>
+      <div class="session">
+        &#9733; 10 AM - 11 AM Appointment with Sam
+      </div>
+      <div class="specifiers">
+        <span class="session-type">Individual session</span>
+        <span class="session-location">Join Zoom Here</span>
+      </div>
+      <div class="topics-title">
+        Topics suggested by Sam:
+      </div>
+      <div class="topic">
+        I was a bit confused about UCD loops and all the steps
+        involved with them so I wanted to make sure I'm doing everything
+        right.
+      </div>
+      <div class="comment">
+        Comment
+      </div>
+      <div class="change-appointment">
+        Change Appointment
+      </div>
 
-          <div class="session">
-            &#9733; 6 PM - 7 PM User Interface Design OH
+      <div class="session">
+        &#9733; 6 PM - 7 PM User Interface Design OH
+      </div>
+      <div class="specifiers">
+        <span class="session-type">Group session</span>
+        <span class="session-location">6XX Schapiro CEPSR</span>
+      </div>
+      <div class="topics-title">
+        Topics voted on by students
+      </div>
+      <div class="topic">
+        <input type="checkbox" name="storyboarding" checked>
+        <label for="storyboarding">Storyboarding</label>
+        <div class="vote">
+          <div class="vote-bar bar3"></div>
+          <div class="vote-number">
+            5
           </div>
-          <div class="specifiers">
-            <span class="session-type">Group session</span>
-            <span class="session-location">6XX Schapiro CEPSR</span>
-          </div>
-          <div class="topics-title">
-            Topics voted on by students
-          </div>
-          <div class="topic">
-            <input type="checkbox" name="storyboarding" checked>
-            <label for="storyboarding">Storyboarding</label>
-            <div class="vote">
-              <div class="vote-bar bar3"></div>
-              <div class="vote-number">
-                5
-              </div>
-            </div>
-          </div>
-          <br>
-          <div class="change-appointment">
-            Edit this Office Hour event
-          </div>
+        </div>
+      </div>
+      <br>
+      <div class="change-appointment">
+        Edit this Office Hour event
       </div>
     </div>
-  </body>
+  </div>
+</div>
+<div id="dialog-manage-course-professor">
+  <div class="dialog-title">Manage My Courses</div>
+  <div class="dialog-row">
+    <label for="course-select-professor">Course:</label>
+    <select id="course-select-professor" class="course-select">
+      <option selected="selected">COMS4170 User Interface Design</option>
+      <option>COMS4111 Introduction To Databases</option>
+    </select>
+    <button class="button-add-class"
+            onclick="onClickAddCourse('dialog-manage-course-professor')">+</button>
+  </div>
+  <div class="ia-container-user">
+    <div class="ia-detail-container">
+      <div class="ia-photo"></div>
+      <div>
+        <div class="ia-name">Prof. Brian A. Smith</div>
+        <div>
+          <div class="ia-detail-row">
+            <span>Office hour:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Zoom link:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Email:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Website:</span>
+            <span>XXXXXX</span>
+          </div>
+        </div>
+        <a class="ia-detail-edit" href="#">edit</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dialog-row">You are an instructor of this class</div>
+  <div class="ia-container">
+    <!--        <div>Professor:</div>-->
+    <div>IAs:</div>
+    <div class="ia-detail-container">
+      <div class="ia-photo"></div>
+      <div>
+        <div class="ia-name">Vishnu Nair (Head TA)</div>
+        <div>
+          <div class="ia-detail-row">
+            <span>Office hour:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Zoom link:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Email:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Website:</span>
+            <span>XXXXXX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ia-detail-container">
+      <div class="ia-photo"></div>
+      <div>
+        <div class="ia-name">Lea Broudo</div>
+        <div>
+          <div class="ia-detail-row">
+            <span>Office hour:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Zoom link:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Email:</span>
+            <span>XXXXXX</span>
+          </div>
+          <div class="ia-detail-row">
+            <span>Website:</span>
+            <span>XXXXXX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dialog-button-container">
+    <button class="dialog-button negative">Remove this Course</button>
+  </div>
+</div>
+<div id="dialog-enroll-course">
+  <div class="dialog-title">Enroll in a Course</div>
+  <div class="dialog-row">
+    <span>Course:</span>
+    <form id="enroll-search-form"> <!-- action="/not_implemented" -->
+      <input id="enroll-search-input" name="search_query" type="text">
+      <input id="enroll-search-submit" type="submit" value="Search">
+    </form>
+  </div>
+  <div id="enroll-search-result">
+    <hr class="solid-divider">
+    <div class="dialog-title">COMS4170 User Interface Design</div>
+    <form id="enroll-choice-form" class="dialog-row">
+      <div>Enroll as:</div>
+      <div id="enroll-radio-list">
+        <div>
+          <div>
+            <input type="radio" name="enroll-choice-item" id="enroll-choice-student" value="student">
+            <label for="enroll-choice-student">Student</label>
+          </div>
+          <div>
+            <input type="radio" name="enroll-choice-item" id="enroll-choice-instructor" value="instructor">
+            <label for="enroll-choice-instructor">Instructor</label>
+          </div>
+          <div>
+            <input type="radio" name="enroll-choice-item" id="enroll-choice-professor" value="professor">
+            <label for="enroll-choice-professor">Professor</label>
+          </div>
+        </div>
+        <button class="dialog-button positive" type="submit">Confirm Enrollment</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
 </html>
