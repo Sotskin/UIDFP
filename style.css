@@ -258,8 +258,27 @@ body {
   width: 60px;
 }
 
+.bar3 {
+  width: 223px;
+}
+
 .create-topic {
   margin-left: 120px;
+  font-size: 18px;
+  color: #4497E3;
+  text-decoration: underline;
+}
+
+.comment {
+  margin-left: 90px;
+  font-size: 18px;
+  color: #4497E3;
+  text-decoration: underline;
+}
+
+.change-appointment {
+  margin-left: 25px;
+  margin-top:20px;
   font-size: 18px;
   color: #4497E3;
   text-decoration: underline;
