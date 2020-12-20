@@ -1,3 +1,7 @@
+html {
+  zoom: 80%;
+}
+
 body {
   font-family: Arial, sans-serif;
   background: lightgray;
