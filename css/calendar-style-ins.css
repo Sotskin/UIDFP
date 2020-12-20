@@ -3,10 +3,10 @@ body {
   background: lightgray;
 }
 
-#wrapper {
-  margin-left:auto;
-  margin-right:auto;
-}
+/*#wrapper {*/
+/*  margin-left:auto;*/
+/*  margin-right:auto;*/
+/*}*/
 
 #dashboard {
   margin-left: auto;
@@ -33,11 +33,13 @@ hr {
   border-top: 2px solid;
 }
 .main-dashboard {
-  width: 100%;
   vertical-align: center;
-  min-height: 83vh;
+  max-height: 100%;
   background: #F9F9F9;
   margin-top: 2.5px;
+  display: flex;
+  min-width: 100vh;
+  max-width: 100%;
 }
 
 .header {
@@ -110,19 +112,17 @@ hr {
 .left-panel {
   width: 245px;
   height: 83vh;
-  display: block;
-  margin-left: 100px;
+  /* display: block; */
+  margin-left: 96px;
   padding-top: 1px;
   /* background: lightblue; */
 }
 .right-panel {
   width: 933px;
   height: 573px;
-  margin-left: 465px;
-  display: block;
   /* background: red; */
-  margin-top:-673px;
-  position: absolute;
+  margin-left: 150px;
+  margin-top: 46px;
 }
 
 .calendar {
@@ -367,8 +367,6 @@ input[type=checkbox] {
   width: 933px;
   height: 562px;
   /* background: red; */
-  position: absolute;
-  overflow: auto;
   margin-top: 6px;
 }
 
@@ -644,8 +642,8 @@ input[type=checkbox] {
   height: 43px;
   /* background-color:rgba(0, 0, 0, 0.25); */
   position: absolute;
-  margin-top:-82px;
-  margin-left: 465px;
+  margin-top: 640px;
+  margin-left: 490px;
 }
 
 .legend-text {
